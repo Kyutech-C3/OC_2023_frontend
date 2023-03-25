@@ -8,8 +8,7 @@
         "start": "next start",
         "lint": "next lint",
         "new": "hygen generator new",
-        "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "storybook": "storybook dev -p 6006"
     },
     "dependencies": {
         "@react-three/fiber": "^8.12.0",
