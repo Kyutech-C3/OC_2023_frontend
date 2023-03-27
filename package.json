@@ -11,6 +11,7 @@
         "storybook": "storybook dev -p 6006"
     },
     "dependencies": {
+        "@react-three/drei": "^9.58.4",
         "@react-three/fiber": "^8.12.0",
         "@types/node": "18.14.2",
         "@types/react": "18.0.28",
@@ -19,6 +20,7 @@
         "next": "13.2.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "react-three-fiber": "^6.0.13",
         "three": "^0.150.1",
         "typescript": "<4.8.0"
     },
@@ -39,6 +41,7 @@
         "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-storybook": "^0.6.11",
+        "file-loader": "^6.2.0",
         "hygen": "^6.2.11",
         "storybook": "^7.0.0-beta.55"
     }
