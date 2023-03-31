@@ -41,35 +41,76 @@
 
     `http://localhost:6006`にアクセスすることでコンポーネントをレンダリングすることができる
 
--   コンポーネント作成
+    **各ディレクトリに`[コンポーネント名].stories.tsx`ファイルが生成されるが基本的には触らなくていい**
 
-    本プロダクトでは`hygen`というライブラリを使用し、ファイル生成を容易にしている。
+-   コンポーネント
 
-    コンポーネントを作成する際は以下コマンドを実行しファイルを生成する。
+    -   コンポーネントの作成
 
-    `pnpm new`
+        本プロダクトでは`hygen`というライブラリを使用し、ファイル生成を容易にしている。
 
-    実行すると対話形式でファイル生成が開始される
+        コンポーネントを作成する際は以下コマンドを実行しファイルを生成する。
 
-    ```
-    ✔ What is the component name? ·
-    ✔ Where is the directory? (No problem in blank) ·
-    ✔ Is it have props? (y/N) · false
-    ```
+        `pnpm new`
 
-    1. コンポーネントの名前を記入する(Header など)
-    2. 次に ディレクトリ指定をする 入力なしの場合は`src/components/`配下に生成される。
-       特定の場合においてはディレクトリ名を指定する必要がある。
-       例えば`Common`という様々なとこに使用されるコンポーネントをまとめるディレクトリが作成されているときは`Common`と入力すれば`src/components/Common`以下にファイルが生成される。
-    3. `props`をもつかを記入　入力なしで false(props を持たない)
-       必要に応じて使用
+        実行すると対話形式でファイル生成が開始される
+
+        ```
+        ✔ What is the component name? ·
+        ✔ Where is the directory? (No problem in blank) ·
+        ✔ Is it have props? (y/N) · false
+        ```
+
+        1. コンポーネントの名前を記入する(Header など)
+        2. 次に ディレクトリ指定をする 入力なしの場合は`src/components/`配下に生成される。
+           特定の場合においてはディレクトリ名を指定する必要がある。
+           例えば`Common`という様々なとこに使用されるコンポーネントをまとめるディレクトリが作成されているときは`Common`と入力すれば`src/components/Common`以下にファイルが生成される。
+        3. `props`をもつかを記入　入力なしで false(props を持たない)
+           必要に応じて使用
+
+    -   ファイルわけ
+        基本的には`[コンポーネント名].tsx`と`[コンポーネント名].stories.tsx`と`hooks/index.tsx`と`libs/index.tsx`と`types/index.tsx`の 5 ファイルに分けて記述する。関数がない場合や`type`を使わない場合はそれぞれのファイルに記述する必要ない,`libs`と`hooks`の違いについては`hooks`にはカスタムフックを記述し、`libs`にはカスタムフック以外を書いてください。カスタムフックが何かわからない人は基本`libs`です
+
+        モデルようのファイルは`components/Model`配下に設置する
+
+        また`src/components/[Map|Web]/[コンポーネントカテゴリ]/[コンポーネント名]/`配下に各ファイルを設置する
+
+        例えば web のヘッダーを作りたいときは`コンポーネントカテゴリ`は`Common`(共通して使われるコンポーネントのカテゴリ)に配置されるため配置するディレクトリは
+
+        `src/components/Web/Common/Header/[Header.tsx Header.stories.tsx]`
+
+        `src/types/index.ts`
+
+        `src/hooks/index.ts`
+
+        `src/libs/index.ts`
+
+        ディレクトリ構造は以下の通り
+
+        ```
+        src
+        ├── app
+        │
+        ├── components
+        │   ├── Map
+        │   └── Web
+        │       └── Common
+        │           └── Header
+        │               ├── Header.stories.tsx
+        │               └── Header.tsx
+        ├── hooks
+        │   └── index.ts
+        ├── libs
+        │   └── index.ts
+        └── types
+            └── index.ts
+        ```
 
 -   ブランチ
 
     -   ブランチのルート
 
         ブランチは`develop`ブランチから生やす
-
 
     -   ブランチの命名規則
 
