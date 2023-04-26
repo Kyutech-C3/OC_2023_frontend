@@ -30,6 +30,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-three-fiber: ^6.0.13
+  recoil: ^0.7.7
   storybook: ^7.0.0-beta.55
   three: ^0.150.1
   typescript: <4.8.0
@@ -49,6 +50,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-three-fiber: 6.0.13_73epb4osyabtjyiaeamriercbi
+  recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
   three: 0.150.1
   typescript: 4.7.4
 
@@ -2412,6 +2414,41 @@ packages:
       zustand: 3.7.2_react@18.2.0
     dev: false
 
+  /@react-three/fiber/8.12.2_73epb4osyabtjyiaeamriercbi:
+    resolution: {integrity: sha512-CIjSK02ffXnT6q+/7HJ1JTX9dDS4N67OAs/yYYtUKK5qkO2WUFVt6ymQDAp7yLPRFA+frvYfAHSIIYwQ48dmDQ==}
+    peerDependencies:
+      expo: '>=43.0'
+      expo-asset: '>=8.4'
+      expo-gl: '>=11.0'
+      react: '>=18.0'
+      react-dom: '>=18.0'
+      react-native: '>=0.64'
+      three: '>=0.133'
+    peerDependenciesMeta:
+      expo:
+        optional: true
+      expo-asset:
+        optional: true
+      expo-gl:
+        optional: true
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@types/react-reconciler': 0.26.7
+      its-fine: 1.1.0_react@18.2.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-reconciler: 0.27.0_react@18.2.0
+      react-use-measure: 2.1.1_biqbaboplfbrettd7655fr4n2y
+      scheduler: 0.21.0
+      suspend-react: 0.0.8_react@18.2.0
+      three: 0.150.1
+      zustand: 3.7.2_react@18.2.0
+    dev: false
+
   /@rushstack/eslint-patch/1.2.0:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
     dev: true
@@ -2529,7 +2566,7 @@ packages:
       '@storybook/csf-plugin': 7.0.0-beta.55
       '@storybook/csf-tools': 7.0.0-beta.55
       '@storybook/global': 5.0.0
-      '@storybook/mdx2-csf': 1.0.0-next.7
+      '@storybook/mdx2-csf': 1.1.0-next.0
       '@storybook/node-logger': 7.0.0-beta.55
       '@storybook/postinstall': 7.0.0-beta.55
       '@storybook/preview-api': 7.0.0-beta.55
@@ -3182,7 +3219,7 @@ packages:
       '@storybook/core-events': 7.0.0-beta.55
       '@storybook/csf': 0.0.2-next.11
       '@storybook/csf-tools': 7.0.0-beta.55
-      '@storybook/docs-mdx': 0.0.1-next.6
+      '@storybook/docs-mdx': 0.0.1-next.7
       '@storybook/global': 5.0.0
       '@storybook/manager': 7.0.0-beta.55
       '@storybook/node-logger': 7.0.0-beta.55
@@ -3279,8 +3316,8 @@ packages:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/docs-mdx/0.0.1-next.6:
-    resolution: {integrity: sha512-DjoSIXADmLJtdroXAjUotFiZlcZ2usWhqrS7aeOtZs0DVR0Ws5WQjnwtpDUXt8gryTSd+OZJ0cNsDcqg4JDEvQ==}
+  /@storybook/docs-mdx/0.0.1-next.7:
+    resolution: {integrity: sha512-JbgBf/EMBtx65iXtB3pOiX3818UeL9jZ+KAY241OAPqJVXjMQ5KaVOdg/57MSmd508HDIGx7CiImOMEmWwQ9/g==}
     dev: true
 
   /@storybook/docs-tools/7.0.0-alpha.8_biqbaboplfbrettd7655fr4n2y:
@@ -3355,8 +3392,8 @@ packages:
     resolution: {integrity: sha512-LxmjJgjjj4FZtm9QWtW0oblpTKBNIxp+BiShGxMF++geMPLmM76MTOub9Ivj8TIvpWBCcFuRVJUPpftBf5kvSg==}
     dev: true
 
-  /@storybook/mdx2-csf/1.0.0-next.7:
-    resolution: {integrity: sha512-xcQ8w4IecABAjsakaZTGiUEnEgFZzVKsMjqECjd+qdkwgD3R/kwrBdfyC15CLM5Ye1miPwYBIwJGeBXB9qxsZg==}
+  /@storybook/mdx2-csf/1.1.0-next.0:
+    resolution: {integrity: sha512-DeXEULA683XaoNJpAwqJU4lKnpCAACdIiSDqCuAfKzhHYAv11snQ8VjPrtR1I0WcWG4ATi+TawT1dWFnsYhhAQ==}
     dev: true
 
   /@storybook/nextjs/7.0.0-beta.55_rt4sw5riguqpynzvfc6metlm6e:
@@ -6830,6 +6867,10 @@ packages:
       through2: 2.0.5
     dev: true
 
+  /hamt_plus/1.0.2:
+    resolution: {integrity: sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA==}
+    dev: false
+
   /handlebars/4.7.7:
     resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==}
     engines: {node: '>=0.4.7'}
@@ -8980,7 +9021,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@react-three/fiber': 8.12.0_73epb4osyabtjyiaeamriercbi
+      '@react-three/fiber': 8.12.2_73epb4osyabtjyiaeamriercbi
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       three: 0.150.1
@@ -9096,6 +9137,23 @@ packages:
     dependencies:
       resolve: 1.22.1
     dev: true
+
+  /recoil/0.7.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-8Og5KPQW9LwC577Vc7Ug2P0vQshkv1y3zG3tSSkWMqkWSwHmE+by06L8JtnGocjW6gcCvfwB3YtrJG6/tWivNQ==}
+    peerDependencies:
+      react: '>=16.13.1'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      hamt_plus: 1.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /regenerate-unicode-properties/10.1.0:
     resolution: {integrity: sha512-d1VudCLoIGitcU/hEg2QqvyGZQmdC0Lf8BqdOMXGFSvJP4bNV1+XqbPQeHHLD51Jh4QJJ225dlIFvY4Ly6MXmQ==}
