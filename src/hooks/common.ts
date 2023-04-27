@@ -1,4 +1,4 @@
-import { topLoadingAtom } from "@/components/state/topLoading";
+import { topLoadingAtom } from "@/state/topLoading";
 import { TopLoadingProps } from "@/types/common";
 import { useEffect } from "react";
 import { useSetRecoilState } from "recoil";
