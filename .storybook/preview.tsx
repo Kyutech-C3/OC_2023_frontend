@@ -4,7 +4,7 @@ import {} from "@storybook/react";
 import React from "react";
 import { RecoilRoot } from "recoil";
 import { createTheme } from "./../src/libs/theme";
-const theme = createTheme();
+const theme = createTheme(false);
 const preview: Preview = {
     decorators: [
         (Story) => (
