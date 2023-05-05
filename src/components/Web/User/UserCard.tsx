@@ -5,7 +5,6 @@ export const UserCard = ({
     display_name: disPlayName,
     avatar_url: avatarUrl,
 }: Pick<UserProps, "display_name" | "avatar_url">) => {
-    console.log(disPlayName);
     return (
         <Stack direction="row" spacing={2}>
             <Avatar src={avatarUrl} sx={{ border: "1px solid #aaaaaadd" }} />
