@@ -13,7 +13,7 @@ const Artifacts = () => {
     );
     useTopLoading({ isLoading, message: "loading" });
     return (
-        <Grid container>
+        <Grid container justifyContent={"center"} spacing={3}>
             {data?.map((artifact: Work, index: number) => (
                 <Grid item key={index}>
                     <Artifact {...artifact} />
