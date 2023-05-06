@@ -1,34 +1,48 @@
-import { ThemeProvider } from "@mui/material";
-import type { Preview } from "@storybook/react";
-import {} from "@storybook/react";
-import React from "react";
-import { RecoilRoot } from "recoil";
 import { createTheme } from "./../src/libs/theme";
-const theme = createTheme(false);
-const preview: Preview = {
-    decorators: [
-        (Story) => (
-            <RecoilRoot>
-                <ThemeProvider theme={theme}>
-                    <Story />
-                </ThemeProvider>
-            </RecoilRoot>
-        ),
-    ],
-    parameters: {
-        backgrounds: {
-            default: "light",
-        },
-        actions: { argTypesRegex: "^on[A-Z].*" },
-        controls: {
-            matchers: {
-                color: /(background|color)$/i,
-                date: /Date$/,
-            },
+
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import React, { useMemo } from "react";
+import { RecoilRoot } from "recoil";
+
+export const parameters = {
+    actions: { argTypesRegex: "^on[A-Z].*" },
+    controls: {
+        expanded: true,
+        hideNoControlsWarning: true,
+        matchers: {
+            color: /(background|color)$/i,
+            date: /Date$/,
         },
     },
 };
 
-export default preview;
+export const globalTypes = {
+    theme: {
+        name: "Theme",
+        title: "Theme",
+        description: "Theme for your components",
+        defaultValue: "light",
+        toolbar: {
+            icon: "paintbrush",
+            dynamicTitle: true,
+            items: [
+                { value: "light", left: "☀️", title: "Light mode" },
+                { value: "dark", left: "🌙", title: "Dark mode" },
+            ],
+        },
+    },
+};
+const withMuiTheme = (Story, context) => {
+    const { theme: themeKey } = context.globals;
+    const theme = useMemo(() => createTheme(themeKey == "dark"), [themeKey]);
 
-export const decorators = [(Story) => <Story />];
+    return (
+        <RecoilRoot>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Story />
+            </ThemeProvider>
+        </RecoilRoot>
+    );
+};
+export const decorators = [withMuiTheme];
