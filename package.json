@@ -8,7 +8,8 @@
         "start": "next start",
         "lint": "next lint",
         "new": "hygen generator new",
-        "storybook": "storybook dev -p 6006"
+        "sb": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
     },
     "dependencies": {
         "@emotion/react": "^11.10.6",
