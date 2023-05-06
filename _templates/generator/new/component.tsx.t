@@ -3,7 +3,7 @@ to: <%= abs_path %>/<%= name %>.tsx
 unless_exists: true
 ---
 <% if (have_props) { %>
-interface <%= name %>Props {
+export type <%= name %>Props = {
   str: string;
 }
 <%}%>
