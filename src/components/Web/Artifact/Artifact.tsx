@@ -22,8 +22,8 @@ export const Artifact = ({
         <Button
             sx={{
                 border: "2px solid",
-                height: isSmall ? "30vh" : "40vh",
-                width: "35vw",
+                height: isSmall ? "35vh" : "45vh",
+                width: isSmall ? "30vw" : "60vw",
                 borderRadius: "10px",
             }}
             variant="contained"
@@ -32,28 +32,33 @@ export const Artifact = ({
         >
             <Stack direction={isSmall ? "row" : "column"} spacing={2}>
                 <Stack
-                    sx={{ width: isSmall ? "15vw" : "20vw" }}
-                    alignSelf={isSmall ? "start" : "center"}
+                    sx={{ width: isSmall ? "15vw" : "40vw" }}
+                    alignSelf={"center"}
                 >
-                    <Image
-                        src={thumbnail.url}
-                        layout="responsive"
-                        width={100}
-                        height={100}
-                        alt={thumbnail.url}
-                        style={{
-                            borderRadius: "5px",
-                            border: "1px solid #88888888",
+                    <Box
+                        sx={{
+                            width: "100%",
+                            position: "relative",
+                            height: isSmall ? "15vh" : "15vh",
                         }}
-                    />
+                    >
+                        <Image
+                            src={thumbnail.url}
+                            layout="fill"
+                            objectFit="contain"
+                            alt={thumbnail.url}
+                        />
+                    </Box>
                     {/* TODO:タグコンポーネントを追加する */}
                     {isSmall && <>tag</>}
                 </Stack>
-                <Stack spacing={1}>
+                <Stack spacing={1} sx={{ width: isSmall ? "10vw" : "30vw" }}>
                     <Box>
                         <Typography variant="body2">タイトル</Typography>
                         <Typography variant="body2" textAlign="end">
-                            {title}
+                            {title.length > 10
+                                ? title.substring(0, 10) + "..."
+                                : title}
                         </Typography>
                     </Box>
                     <Box>
