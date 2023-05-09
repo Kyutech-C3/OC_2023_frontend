@@ -1,25 +1,33 @@
 import { Artifact } from "@/components/Web/Artifact/Artifact";
 import { useTopLoading } from "@/hooks/common";
+import { useGetWorks } from "@/hooks/web";
 import { Work } from "@/types/common";
 import { Grid } from "@mui/material";
-import axios from "axios";
-import useSWR from "swr";
+import InfiniteScroll from "react-infinite-scroller";
 
 const Artifacts = () => {
-    const fetcher = (url: string) => axios(url).then((res) => res.data.works);
-    const { data, isLoading } = useSWR(
-        `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works`,
-        fetcher
+    const { works, refetch, isLoading, isContinue } = useGetWorks(
+        `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works`
     );
-    useTopLoading({ isLoading, message: "loading" });
+    useTopLoading({ isLoading, message: "getting" });
+
     return (
-        <Grid container justifyContent={"center"} spacing={3}>
-            {data?.map((artifact: Work, index: number) => (
-                <Grid item key={index}>
-                    <Artifact {...artifact} />
-                </Grid>
-            ))}
-        </Grid>
+        <InfiniteScroll
+            loadMore={() => {
+                if (works.length != 0) {
+                    refetch(`newest_work_id=${works[works.length - 1].id}`);
+                }
+            }}
+            hasMore={isContinue}
+        >
+            <Grid container justifyContent={"center"} spacing={3}>
+                {works?.map((artifact: Work, index: number) => (
+                    <Grid item key={index}>
+                        <Artifact {...artifact} />
+                    </Grid>
+                ))}
+            </Grid>
+        </InfiniteScroll>
     );
 };
 export default Artifacts;
