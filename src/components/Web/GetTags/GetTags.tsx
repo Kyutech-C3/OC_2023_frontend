@@ -1,36 +1,48 @@
-import { Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-
-interface GetTagsProps {
-    str: string;
-}
+import { useState } from "react";
 
 interface TagProps {
     logourl: string;
     logoname: string;
 }
 
-const Tags: TagProps[] = [
-    {
-        logourl: "./ts-logo-128.png",
-        logoname: "typescript",
-    },
-    {
-        logourl: "./blender.png",
-        logoname: "blender",
-    },
-];
-export const GetTags = (Tags:TagProps) => {
-    return (
+export function GetTags() {
+    const [Tags, setTags] = useState<TagProps[]>([]);
+    const DemoTags: TagProps[] = [
         {
-            Tags.map((Tags:TagProps, index: number) => (
-                    <Grid container md="auto" key={index}>
-                        <Image alt="image" src={Tags.logourl} />
-                        <Typography textAlign={"center"} ml={2} marginTop="8px">
-                            {Tags.logoname}
-                        </Typography>
-                    </Grid>
-            ))
-        }
-    )
+            logourl: "./ts-logo-128.png",
+            logoname: "typescript",
+        },
+        {
+            logourl: "./blender.png",
+            logoname: "blender",
+        },
+    ];
+
+    const handleClick = () => {
+        setTags(DemoTags);
+    };
+
+    return (
+        <>
+            <Button variant="contained" onClick={handleClick}>
+                {" "}
+                settag{" "}
+            </Button>
+            {Tags.map((Tags: TagProps, index: number) => (
+                <Grid container md="auto" key={index}>
+                    <Image
+                        alt="image"
+                        width={20}
+                        height={20}
+                        src={Tags.logourl}
+                    />
+                    <Typography textAlign={"center"} ml={2}>
+                        {Tags.logoname}
+                    </Typography>
+                </Grid>
+            ))}
+        </>
+    );
 }
