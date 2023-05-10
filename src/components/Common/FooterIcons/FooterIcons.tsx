@@ -67,9 +67,9 @@ export const FooterIcons = () => {
     ];
     return (
         <Grid container direction="row" spacing={1}>
-            {footerButtons.map((footerButton, index) => (
-                <Grid item>
-                    <FooterIcon key={index} {...footerButton} />
+            {footerButtons.map((footerButton) => (
+                <Grid item key={footerButton.linkPath}>
+                    <FooterIcon {...footerButton} />
                 </Grid>
             ))}
         </Grid>

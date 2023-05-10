@@ -1,4 +1,5 @@
 import { ButtonProps } from "@mui/material";
+import React from "react";
 
 export type TweetButtonProps = {
     text: string;
@@ -12,6 +13,6 @@ export type ScrollButtonProps = {
 
 export type FooterButtonType = {
     name: string;
-    iconElement: JSX.Element;
+    iconElement: React.ReactNode;
     linkPath: string;
 };
