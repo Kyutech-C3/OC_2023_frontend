@@ -9,3 +9,9 @@ export type ScrollButtonProps = {
     text: string;
     color: ButtonProps["color"];
 };
+
+export type FooterButtonType = {
+    name: string;
+    iconElement: JSX.Element;
+    linkPath: string;
+};
