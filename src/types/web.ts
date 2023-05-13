@@ -1,5 +1,6 @@
 import { ButtonProps } from "@mui/material";
 import React from "react";
+import { Asset } from "./common";
 
 export type TweetButtonProps = {
     text: string;
@@ -23,4 +24,9 @@ export type MarkdownViewerProps = {
 export type LinkRendererProps = {
     href: string | undefined;
     children: React.ReactNode;
+};
+export type AssetsProps = {
+    isOpen: boolean;
+    closeModal: () => void;
+    assets: Asset[];
 };
