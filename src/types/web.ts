@@ -16,3 +16,11 @@ export type FooterButtonType = {
     iconElement: React.ReactNode;
     linkPath: string;
 };
+export type MarkdownViewerProps = {
+    rawText: string;
+};
+
+export type LinkRendererProps = {
+    href: string | undefined;
+    children: React.ReactNode;
+};
