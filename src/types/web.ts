@@ -16,3 +16,8 @@ export type FooterButtonType = {
     iconElement: React.ReactNode;
     linkPath: string;
 };
+
+export type WorkTagProps = {
+    tagLink: string;
+    tagName: string;
+};
