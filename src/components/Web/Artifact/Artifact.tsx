@@ -1,0 +1,89 @@
+import Date from "@/components/Common/Date/Date";
+import { getCategory } from "@/libs/getCategory";
+import { Work } from "@/types/common";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
+import Image from "next/image";
+import { UserCard } from "../User/UserCard";
+
+export const Artifact = ({
+    id,
+    title,
+    user,
+    created_at: createdAt,
+    tags,
+    thumbnail,
+}: Pick<
+    Work,
+    "id" | "title" | "user" | "created_at" | "tags" | "thumbnail"
+>) => {
+    const category = getCategory(tags);
+    const isSmall = useMediaQuery("(min-width:600px)");
+    return (
+        <Button
+            sx={{
+                border: "2px solid",
+                height: isSmall ? "35vh" : "45vh",
+                width: isSmall ? "30vw" : "60vw",
+                borderRadius: "10px",
+            }}
+            variant="contained"
+            href={`/web/artifact/${category}/${id}`}
+            color={category}
+        >
+            <Stack direction={isSmall ? "row" : "column"} spacing={2}>
+                <Stack
+                    sx={{ width: isSmall ? "15vw" : "40vw" }}
+                    alignSelf={"center"}
+                >
+                    <Box
+                        sx={{
+                            width: "100%",
+                            position: "relative",
+                            height: isSmall ? "15vh" : "15vh",
+                        }}
+                    >
+                        <Image
+                            src={thumbnail.url}
+                            layout="fill"
+                            objectFit="contain"
+                            alt={thumbnail.url}
+                        />
+                    </Box>
+                    {/* TODO:タグコンポーネントを追加する */}
+                    {isSmall && <>tag</>}
+                </Stack>
+                <Stack spacing={1} sx={{ width: isSmall ? "10vw" : "30vw" }}>
+                    <Box>
+                        <Typography variant="body2">タイトル</Typography>
+                        <Typography variant="body2" textAlign="end">
+                            {title.length > 10
+                                ? title.substring(0, 10) + "..."
+                                : title}
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <Typography
+                            variant="body2"
+                            sx={{ alignSelf: "center" }}
+                        >
+                            製作者
+                        </Typography>
+                        <Stack direction="row">
+                            <Box flexGrow={1} />
+                            <UserCard {...user} size="small" />
+                        </Stack>
+                    </Box>
+                    <Box>
+                        <Typography variant="caption">投稿日</Typography>
+                        <Stack direction="row">
+                            <Box flexGrow={1} />
+                            <Date dateString={createdAt} />
+                        </Stack>
+                    </Box>
+                    {/* TODO:tagコンポーネントを追加する */}
+                    {!isSmall && <>tag</>}
+                </Stack>
+            </Stack>
+        </Button>
+    );
+};
