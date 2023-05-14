@@ -8,7 +8,7 @@ export function WorkTag({ name }: GetTag) {
     const tag2icon = {
         cg: "cg.png",
         hack: "hack.png",
-        blender: "/icon/image/blender.png",
+        blender: "/image/icon/blender.png",
         game: <Games />,
     };
 
@@ -34,6 +34,7 @@ export function WorkTag({ name }: GetTag) {
                         objectFit="contain"
                         objectPosition="center"
                     />
+                    {tag2icon[name]}
                     <Typography>{name}</Typography>
                 </Stack>
             </Box>

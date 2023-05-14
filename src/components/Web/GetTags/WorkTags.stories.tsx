@@ -1,11 +1,10 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ShowWorkTag } from "./ShowTags";
+import { WorkTags } from "./WorkTags";
 
 export default {
     title: "Web/ShowTags",
-    component: ShowWorkTag,
+    component: WorkTags,
     tags: ["autodocs"],
     parameters: {
         layout: "fullscreen",
@@ -14,7 +13,7 @@ export default {
 } as ComponentMeta<typeof ShowTags>;
 
 const Template: ComponentStory<typeof ShowTags> = (args) => (
-    <ShowWorkTag {...args} />
+    <WorkTags {...args} />
 );
 export const Default = Template.bind({});
 Default.args = {};

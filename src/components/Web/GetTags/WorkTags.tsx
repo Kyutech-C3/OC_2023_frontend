@@ -1,11 +1,11 @@
 import { GetTag } from "@/types/common";
 import { Grid } from "@mui/material";
-import { WorkTag } from "../GetTags/WorkTag";
+import { WorkTag } from "./WorkTag";
 
-export function ShowWorkTag(tags: GetTag[]) {
+export function WorkTags(tags: GetTag[]) {
     return (
         <Grid container>
-            {tags.map((tag: GetTag, index: number) => (
+            {tags.map((tag: GetTag, index) => (
                 <Grid item key={index} spacing={2}>
                     <WorkTag {...tag} />
                 </Grid>
