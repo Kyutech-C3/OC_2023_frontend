@@ -21,3 +21,7 @@ export type WorkTagProps = {
     tagLink: string;
     tagName: string;
 };
+
+export type ImageIconProps = {
+    src: string;
+};
