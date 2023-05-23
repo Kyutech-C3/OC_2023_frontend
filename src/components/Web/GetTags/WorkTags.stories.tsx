@@ -4,14 +4,16 @@ import { WorkTags } from "./WorkTags";
 
 export default {
     title: "WorkTags",
-    component: WorkTags,
+    component: WorkTags([]),
     tags: ["autodocs"],
     parameters: {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof WorkTags>;
+} as unknown as ComponentMeta<typeof WorkTags>;
 
-const Template: ComponentStory<typeof WorkTags> = () => <WorkTags />;
+const Template: ComponentStory<typeof WorkTags> = (args) => (
+    <WorkTags {...args} />
+);
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = [];
