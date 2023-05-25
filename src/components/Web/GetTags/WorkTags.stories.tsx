@@ -15,5 +15,6 @@ export default {
 const Template: ComponentStory<typeof WorkTags> = (args) => (
     <WorkTags {...args} />
 );
+
 export const Default = Template.bind({});
 Default.args = [];
