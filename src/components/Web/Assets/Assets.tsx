@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Box, IconButton, List, ListItem, Modal } from "@mui/material";
 import Image from "next/legacy/image";
 import { Downloader } from "../Downloader/Downloader";
+import { ModelViewer } from "../ModelViewer/ModelViewer";
 import { Player } from "../Player/Player";
 export const Assets = ({ isOpen, closeModal, assets }: AssetsProps) => {
     return (
@@ -16,7 +17,7 @@ export const Assets = ({ isOpen, closeModal, assets }: AssetsProps) => {
                 justifyContent: "center",
             }}
         >
-            <Box sx={{ position: "relative" }}>
+            <Box sx={{ position: "relative" }} component="div">
                 <IconButton
                     sx={{
                         position: "absolute",
@@ -43,11 +44,12 @@ export const Assets = ({ isOpen, closeModal, assets }: AssetsProps) => {
                         >
                             {asset.asset_type == "video" ||
                             asset.asset_type == "music" ? (
-                                <Box>
+                                <Box component="div">
                                     <Player {...asset} />
                                 </Box>
                             ) : asset.asset_type == "image" ? (
                                 <Box
+                                    component="div"
                                     sx={{
                                         width: "100%",
                                         height: "100%",
@@ -63,8 +65,18 @@ export const Assets = ({ isOpen, closeModal, assets }: AssetsProps) => {
                                     />
                                 </Box>
                             ) : asset.asset_type == "zip" ? (
-                                <Box>
+                                <Box component="div">
                                     <Downloader {...asset} />
+                                </Box>
+                            ) : asset.asset_type == "model" ? (
+                                <Box
+                                    component="div"
+                                    sx={{
+                                        width: "100%",
+                                        height: "100%",
+                                    }}
+                                >
+                                    <ModelViewer {...asset} />
                                 </Box>
                             ) : (
                                 <></>

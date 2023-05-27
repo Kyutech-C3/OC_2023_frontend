@@ -19,6 +19,7 @@ const ArtifactDetail = () => {
     useTopLoading({ isLoading: isLoading, message: "読み込み中" });
     return (
         <Box
+            component="div"
             sx={{
                 width: "100vw",
                 height: "100vh",
@@ -44,6 +45,7 @@ const ArtifactDetail = () => {
             />
             <Slide in={isOpen} direction="left">
                 <Box
+                    component="div"
                     sx={{
                         paddingLeft: "8vw",
                         width: "60vw",
@@ -80,7 +82,11 @@ const ArtifactDetail = () => {
                         >
                             分野:{category}
                         </Typography>
-                        <Box sx={{ overflow: "auto", height: "100%" }} pl={18}>
+                        <Box
+                            component="div"
+                            sx={{ overflow: "auto", height: "100%" }}
+                            pl={18}
+                        >
                             <MarkdownViewer rawText={data?.description} />
                         </Box>
                     </Stack>
