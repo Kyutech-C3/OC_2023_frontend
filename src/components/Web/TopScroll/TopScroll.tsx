@@ -14,6 +14,7 @@ const ScrollButton = ({ text, color }: ScrollButtonProps) => {
             href={`#${text}`}
         >
             <Box
+                component="div"
                 sx={{
                     width: "1vh",
                     height: "20vh",
