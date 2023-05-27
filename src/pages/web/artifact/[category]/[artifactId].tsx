@@ -4,6 +4,7 @@ import { MarkdownViewer } from "@/components/Web/MarkdownViewer/MarkdownViewer";
 import { TweetButton } from "@/components/Web/TweetButton/TweetButton";
 import { UserCard } from "@/components/Web/User/UserCard";
 import { useTopLoading } from "@/hooks/common";
+import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import { Box, Button, Slide, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -60,17 +61,28 @@ const ArtifactDetail = () => {
                     bgcolor={`${category}.dark`}
                 >
                     <Stack>
-                        <Box
+                        <Stack
                             component="div"
                             alignSelf="end"
                             paddingX={10}
                             paddingTop={3}
+                            direction="row"
+                            spacing={3}
                         >
+                            <Button
+                                variant="contained"
+                                onClick={() => router.back()}
+                                startIcon={<KeyboardReturnIcon />}
+                                sx={{ borderRadius: "100px" }}
+                                color="secondary"
+                            >
+                                戻る
+                            </Button>
                             <TweetButton
                                 size="small"
                                 text={`${process.env.NEXT_PUBLIC_FRONT_END_URL}${router.asPath}`}
                             />
-                        </Box>
+                        </Stack>
                         <Stack
                             spacing={10}
                             mt={10}
