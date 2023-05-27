@@ -18,6 +18,7 @@ export const TopLoading = () => {
     return (
         <Slide in={isLoading} timeout={1000}>
             <Box
+                component="div"
                 sx={{
                     zIndex: 100,
                     display: "flex",

@@ -5,6 +5,7 @@ export const Downloader = ({ url }: Asset) => {
     return (
         <Button href={url}>
             <Box
+                component="div"
                 sx={{
                     position: "relative",
                     width: "400px",
@@ -14,6 +15,7 @@ export const Downloader = ({ url }: Asset) => {
                 }}
             >
                 <Box
+                    component="div"
                     sx={{
                         background:
                             "linear-gradient(to right top, #ff3333, #bb3333)",
@@ -31,6 +33,7 @@ export const Downloader = ({ url }: Asset) => {
                     }}
                 >
                     <Box
+                        component="div"
                         sx={{
                             background:
                                 "linear-gradient(to bottom, #ddddcc, #ffffcc)",
@@ -44,6 +47,7 @@ export const Downloader = ({ url }: Asset) => {
                         }}
                     >
                         <Box
+                            component="div"
                             sx={{
                                 background:
                                     "linear-gradient(to bottom, #dddd00, #ffff00)",
@@ -56,6 +60,7 @@ export const Downloader = ({ url }: Asset) => {
                         />
                     </Box>
                     <Box
+                        component="div"
                         sx={{
                             background:
                                 "linear-gradient(to left, #ddddcc, #ffffcc)",
@@ -69,6 +74,7 @@ export const Downloader = ({ url }: Asset) => {
                         }}
                     >
                         <Box
+                            component="div"
                             sx={{
                                 background:
                                     "linear-gradient(to left, #dddd00, #ffff00)",
@@ -82,6 +88,7 @@ export const Downloader = ({ url }: Asset) => {
                     </Box>
                 </Box>
                 <Box
+                    component="div"
                     sx={{
                         background:
                             "linear-gradient(to right bottom, #ff3333, #bb3333)",
@@ -96,6 +103,7 @@ export const Downloader = ({ url }: Asset) => {
                     }}
                 >
                     <Box
+                        component="div"
                         sx={{
                             background:
                                 "linear-gradient(to bottom, #ddddcc, #ffffcc)",
@@ -109,6 +117,7 @@ export const Downloader = ({ url }: Asset) => {
                         }}
                     >
                         <Box
+                            component="div"
                             sx={{
                                 background:
                                     "linear-gradient(to top, #dddd00, #ffff00)",
@@ -121,6 +130,7 @@ export const Downloader = ({ url }: Asset) => {
                         />
                     </Box>
                     <Box
+                        component="div"
                         sx={{
                             background:
                                 "linear-gradient(to top, #ddddcc, #ffffcc)",
@@ -133,6 +143,7 @@ export const Downloader = ({ url }: Asset) => {
                         }}
                     >
                         <Box
+                            component="div"
                             sx={{
                                 background:
                                     "linear-gradient(to top, #dddd00, #ffff00)",
@@ -147,6 +158,7 @@ export const Downloader = ({ url }: Asset) => {
                 </Box>
 
                 <Box
+                    component="div"
                     sx={{
                         background:
                             "linear-gradient(to left bottom, #ff3333, #bb3333)",
@@ -161,6 +173,7 @@ export const Downloader = ({ url }: Asset) => {
                     }}
                 >
                     <Box
+                        component="div"
                         sx={{
                             background:
                                 "linear-gradient(to top, #ddddcc, #ffffcc)",
@@ -173,6 +186,7 @@ export const Downloader = ({ url }: Asset) => {
                         }}
                     >
                         <Box
+                            component="div"
                             sx={{
                                 background:
                                     "linear-gradient(to top, #dddd00, #ffff00)",
@@ -185,6 +199,7 @@ export const Downloader = ({ url }: Asset) => {
                         />
                     </Box>
                     <Box
+                        component="div"
                         sx={{
                             background:
                                 "linear-gradient(to top, #ddddcc, #ffffcc)",
@@ -198,6 +213,7 @@ export const Downloader = ({ url }: Asset) => {
                         }}
                     >
                         <Box
+                            component="div"
                             sx={{
                                 background:
                                     "linear-gradient(to top, #dddd00, #ffff00)",
@@ -211,6 +227,7 @@ export const Downloader = ({ url }: Asset) => {
                     </Box>
                 </Box>
                 <Box
+                    component="div"
                     sx={{
                         backgroundColor: "red",
                         width: "180px",
@@ -224,6 +241,7 @@ export const Downloader = ({ url }: Asset) => {
                     }}
                 />
                 <Box
+                    component="div"
                     sx={{
                         borderRadius: "10px",
                         backgroundColor: "red",
