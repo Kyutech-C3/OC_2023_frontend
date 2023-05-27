@@ -43,6 +43,11 @@ const lightModePalette = {
         dark: "#95CCFF",
         contrastText: "#001D32",
     },
+    text: {
+        primary: "#1C1C17",
+        secondary: "#48473A",
+        disabled: "#797869",
+    },
 };
 const darkModePalette = {
     primary: {
@@ -86,6 +91,11 @@ const darkModePalette = {
         light: "#002842",
         dark: "#00639A",
         contrastText: "#CDE5FF",
+    },
+    text: {
+        primary: "#E6E2D9",
+        secondary: "#CAC7B6",
+        disabled: "#939182",
     },
 };
 export const createTheme = (isDarkMode: boolean) => {
