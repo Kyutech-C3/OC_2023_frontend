@@ -23,6 +23,7 @@ export const TweetButton = ({ size, text }: TweetButtonProps) => {
                 ":hover": {
                     backgroundColor: "#28ABFB",
                 },
+                width: "200px",
             }}
             href={`http://twitter.com/intent/tweet?hashtags=C3OpenCanpas2023&text=${text}`}
         >

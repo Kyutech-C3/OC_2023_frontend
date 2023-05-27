@@ -1,6 +1,7 @@
 import Date from "@/components/Common/Date/Date";
 import { Assets } from "@/components/Web/Assets/Assets";
 import { MarkdownViewer } from "@/components/Web/MarkdownViewer/MarkdownViewer";
+import { TweetButton } from "@/components/Web/TweetButton/TweetButton";
 import { UserCard } from "@/components/Web/User/UserCard";
 import { useTopLoading } from "@/hooks/common";
 import { Box, Button, Slide, Stack, Typography } from "@mui/material";
@@ -13,7 +14,7 @@ const ArtifactDetail = () => {
     const [isOpen, setIsOpen] = useState(true);
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data, isLoading } = useSWR(
-        `https://kodomobeya.compositecomputer.club/api/v1/works/${artifactId}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works/${artifactId}`,
         fetcher
     );
     useTopLoading({ isLoading: isLoading, message: "読み込み中" });
@@ -58,37 +59,56 @@ const ArtifactDetail = () => {
                     }}
                     bgcolor={`${category}.dark`}
                 >
-                    <Stack
-                        spacing={10}
-                        mt={10}
-                        color={`${category}.contrastText`}
-                    >
-                        <Stack direction="row" sx={{ alignItems: "center" }}>
-                            <Typography variant="h5" pl={30}>
-                                製作者:
-                            </Typography>
-                            <UserCard {...data?.user} size="medium" />
-                        </Stack>
-                        <Stack direction="row" sx={{ alignItems: "center" }}>
-                            <Typography variant="h5" pl={26}>
-                                投稿日:
-                            </Typography>
-                            <Date dateString={data?.created_at ?? ""} />
-                        </Stack>
-                        <Typography
-                            variant="h5"
-                            pl={22}
-                            sx={{ alignItems: "center" }}
-                        >
-                            分野:{category}
-                        </Typography>
+                    <Stack>
                         <Box
                             component="div"
-                            sx={{ overflow: "auto", height: "100%" }}
-                            pl={18}
+                            alignSelf="end"
+                            paddingX={10}
+                            paddingTop={3}
                         >
-                            <MarkdownViewer rawText={data?.description} />
+                            <TweetButton
+                                size="small"
+                                text={`${process.env.NEXT_PUBLIC_FRONT_END_URL}${router.asPath}`}
+                            />
                         </Box>
+                        <Stack
+                            spacing={10}
+                            mt={10}
+                            color={`${category}.contrastText`}
+                        >
+                            <Stack
+                                direction="row"
+                                sx={{ alignItems: "center" }}
+                            >
+                                <Typography variant="h5" pl={30}>
+                                    製作者:
+                                </Typography>
+                                <UserCard {...data?.user} size="medium" />
+                            </Stack>
+                            <Stack
+                                direction="row"
+                                sx={{ alignItems: "center" }}
+                            >
+                                <Typography variant="h5" pl={26}>
+                                    投稿日:
+                                </Typography>
+                                <Date dateString={data?.created_at ?? ""} />
+                            </Stack>
+                            <Typography
+                                variant="h5"
+                                pl={22}
+                                sx={{ alignItems: "center" }}
+                            >
+                                分野:{category}
+                            </Typography>
+                            <Box
+                                component="div"
+                                sx={{ overflow: "auto", height: "300px" }}
+                                pl={18}
+                            >
+                                <MarkdownViewer rawText={data?.description} />
+                            </Box>
+                        </Stack>
                     </Stack>
                 </Box>
             </Slide>
