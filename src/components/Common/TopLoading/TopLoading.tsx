@@ -16,30 +16,36 @@ export const TopLoading = () => {
     }, [isLoading]);
 
     return (
-        <Slide in={isLoading} timeout={1000}>
-            <Box
-                component="div"
-                sx={{
-                    zIndex: 100,
-                    display: "flex",
-                    justifyContent: "center",
-                    width: "100vw",
-                    height: "100vh",
-                }}
-            >
-                <Stack
-                    sx={{ justifyContent: "center", textAlign: "center" }}
-                    spacing={3}
+        <Box
+            component="div"
+            position="fixed"
+            sx={{ zIndex: 10000, pointerEvents: "none" }}
+        >
+            <Slide in={isLoading} timeout={1000}>
+                <Box
+                    component="div"
+                    sx={{
+                        zIndex: 100,
+                        display: "flex",
+                        justifyContent: "center",
+                        width: "100vw",
+                        height: "100vh",
+                    }}
                 >
-                    <Image
-                        src="/image/illust/topLoading.gif"
-                        alt="toploading"
-                        width={300}
-                        height={300}
-                    />
-                    <Typography variant="h4">{message}</Typography>
-                </Stack>
-            </Box>
-        </Slide>
+                    <Stack
+                        sx={{ justifyContent: "center", textAlign: "center" }}
+                        spacing={3}
+                    >
+                        <Image
+                            src="/image/illust/topLoading.gif"
+                            alt="toploading"
+                            width={300}
+                            height={300}
+                        />
+                        <Typography variant="h4">{message}</Typography>
+                    </Stack>
+                </Box>
+            </Slide>
+        </Box>
     );
 };
