@@ -36,6 +36,7 @@ export const Artifact = ({
                     alignSelf={"center"}
                 >
                     <Box
+                        component="div"
                         sx={{
                             width: "100%",
                             position: "relative",
@@ -53,7 +54,7 @@ export const Artifact = ({
                     {isSmall && <>tag</>}
                 </Stack>
                 <Stack spacing={1} sx={{ width: isSmall ? "10vw" : "30vw" }}>
-                    <Box>
+                    <Box component="div">
                         <Typography variant="body2">タイトル</Typography>
                         <Typography variant="body2" textAlign="end">
                             {title.length > 10
@@ -61,7 +62,7 @@ export const Artifact = ({
                                 : title}
                         </Typography>
                     </Box>
-                    <Box>
+                    <Box component="div">
                         <Typography
                             variant="body2"
                             sx={{ alignSelf: "center" }}
@@ -69,14 +70,14 @@ export const Artifact = ({
                             製作者
                         </Typography>
                         <Stack direction="row">
-                            <Box flexGrow={1} />
+                            <Box component="div" flexGrow={1} />
                             <UserCard {...user} size="small" />
                         </Stack>
                     </Box>
-                    <Box>
+                    <Box component="div">
                         <Typography variant="caption">投稿日</Typography>
                         <Stack direction="row">
-                            <Box flexGrow={1} />
+                            <Box component="div" flexGrow={1} />
                             <Date dateString={createdAt} />
                         </Stack>
                     </Box>

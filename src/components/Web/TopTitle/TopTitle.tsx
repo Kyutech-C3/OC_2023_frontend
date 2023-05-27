@@ -4,7 +4,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 export const TopTitle = () => {
     return (
         <Stack spacing={3}>
-            <Box>
+            <Box component="div">
                 <Typography fontWeight="bold" variant="h3">
                     C3 Open Campus 2023
                 </Typography>

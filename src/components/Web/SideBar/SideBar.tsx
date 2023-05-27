@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 
 export const SideBar = () => {
     return (
-        <Box>
+        <Box component="div">
             <Typography
                 variant="h4"
                 sx={{
