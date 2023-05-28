@@ -7,7 +7,7 @@ export const getCategory = (
     ButtonTypeMap["props"]["color"],
     "hack" | "game" | "cg2d" | "cg3d" | "music" | "primary"
 > => {
-    for (let tag of tags) {
+    for (const tag of tags) {
         if (tag.name == "hack" || tag.name == "Hack") {
             return "hack";
         } else if (tag.name == "game") {
