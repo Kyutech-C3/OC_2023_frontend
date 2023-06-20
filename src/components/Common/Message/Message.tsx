@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 
 const Message = () => {
     const text = "Message";
-    const characters = text.split(""); // テキストを1文字ずつに分割
+    const characters = text.split(""); 
     const colors = [
         "#64F161",
         "#FFE600",
@@ -13,13 +13,13 @@ const Message = () => {
         "#BCFFD3",
     ];
     const fontSize = [
-        "155em",
-        "145em",
-        "135em",
-        "130em",
-        "120em",
-        "110em",
-        "105em",
+        "155vw",
+        "145vw",
+        "135vw",
+        "130vw",
+        "120vw",
+        "110vw",
+        "105vw",
     ];
 
     return (
