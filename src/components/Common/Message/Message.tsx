@@ -12,13 +12,25 @@ const Message = () => {
         "#FFE587",
         "#BCFFD3",
     ];
+    const fontSize = [
+        "155em",
+        "145em",
+        "135em",
+        "130em",
+        "120em",
+        "110em",
+        "105em",
+    ];
 
     return (
         <Typography>
             {characters.map((character, index) => (
                 <span
                     key={index}
-                    style={{ color: colors[index % colors.length] }}
+                    style={{
+                        color: colors[index % colors.length],
+                        fontSize: fontSize[index % fontSize.length],
+                    }}
                 >
                     {character}
                 </span>
