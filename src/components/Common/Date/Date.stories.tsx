@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import Date from "./Date";
 
 export default {
@@ -9,10 +9,10 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof Date>;
+} as Meta<typeof Date>;
 
-const Template: ComponentStory<typeof Date> = (args) => <Date {...args} />;
-export const Default = Template.bind({});
-Default.args = {
-    dateString: "2023-05-03T17:50:56.348000",
+export const Default: StoryObj<typeof Date> = {
+    args: {
+        dateString: "2023-05-03T17:50:56.348000",
+    },
 };

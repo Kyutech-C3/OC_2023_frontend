@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { ImageViewer } from "./ImageViewer";
 
@@ -10,12 +10,10 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof ImageViewer>;
+} as Meta<typeof ImageViewer>;
 
-const Template: ComponentStory<typeof ImageViewer> = (args) => (
-    <ImageViewer {...args} />
-);
-export const Default = Template.bind({});
-Default.args = {
-    url: "",
+export const Default: StoryObj<typeof ImageViewer> = {
+    args: {
+        url: "",
+    },
 };

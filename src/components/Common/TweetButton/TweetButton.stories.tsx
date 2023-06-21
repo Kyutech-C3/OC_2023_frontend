@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { TweetButton } from "./TweetButton";
 
@@ -10,13 +10,11 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof TweetButton>;
+} as Meta<typeof TweetButton>;
 
-const Template: ComponentStory<typeof TweetButton> = (args) => (
-    <TweetButton {...args} />
-);
-export const Default = Template.bind({});
-Default.args = {
-    size: "small",
-    text: "this is test",
+export const Default: StoryObj<typeof TweetButton> = {
+    args: {
+        size: "small",
+        text: "this is test",
+    },
 };

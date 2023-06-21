@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Favorite } from "./Favorite";
 
@@ -10,13 +10,11 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof Favorite>;
+} as Meta<typeof Favorite>;
 
-const Template: ComponentStory<typeof Favorite> = (args) => (
-    <Favorite {...args} />
-);
-export const Default = Template.bind({});
-Default.args = {
-    workId: "",
-    favoriteUsersProps: [""],
+export const Default: StoryObj<typeof Favorite> = {
+    args: {
+        workId: "",
+        favoriteUsersProps: [""],
+    },
 };
