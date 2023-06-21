@@ -1,4 +1,4 @@
-import Layout from "@/components/Common/othres/Layout";
+import Layout from "@/components/Common/others/Layout";
 import { createTheme } from "@/libs/theme";
 import { ThemeProvider, useMediaQuery } from "@mui/material";
 import type { AppProps } from "next/app";

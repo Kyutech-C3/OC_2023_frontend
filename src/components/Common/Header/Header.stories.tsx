@@ -4,18 +4,15 @@ import React from "react";
 import { Header } from "./Header";
 
 export default {
-  title: "Header",
-  component: Header,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
-  argTypes: {
-  },
+    title: "Common/Header",
+    component: Header,
+    tags: ["autodocs"],
+    parameters: {
+        layout: "fullscreen",
+    },
+    argTypes: {},
 } as ComponentMeta<typeof Header>;
 
-const Template: ComponentStory<typeof Header> = () => <Header  />;
+const Template: ComponentStory<typeof Header> = () => <Header />;
 export const Default = Template.bind({});
-Default.args = {
-
-};
+Default.args = {};

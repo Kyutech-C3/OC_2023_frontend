@@ -1,7 +1,7 @@
 import Date from "@/components/Common/Date/Date";
-import { Assets } from "@/components/Web/Assets/Assets";
+import { Assets } from "@/components/Web/Asset/Assets/Assets";
 import { MarkdownViewer } from "@/components/Web/MarkdownViewer/MarkdownViewer";
-import { TweetButton } from "@/components/Web/TweetButton/TweetButton";
+import { TweetButton } from "@/components/Common/TweetButton/TweetButton";
 import { UserCard } from "@/components/Web/User/UserCard";
 import { useTopLoading } from "@/hooks/common";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";

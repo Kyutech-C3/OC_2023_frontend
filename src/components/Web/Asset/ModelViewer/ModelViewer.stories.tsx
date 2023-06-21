@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ModelViewer } from "./ModelViewer";
 
 export default {
-    title: "Web/ModelViewer",
+    title: "Web/Asset/ModelViewer",
     component: ModelViewer,
     tags: ["autodocs"],
     parameters: {
