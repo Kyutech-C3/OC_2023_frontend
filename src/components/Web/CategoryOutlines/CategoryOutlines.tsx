@@ -1,4 +1,4 @@
-import { outlines } from "@/components/constants/outlines";
+import { outlines } from "@/constants/outlines";
 import { CategoryOutlineCard } from "../CategoryOutlineCard/CategoryOutlineCard";
 
 export const CategoryOutlines = () => {
