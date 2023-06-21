@@ -3,27 +3,27 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export const TopTitle = () => {
     return (
-        <Stack spacing={3}>
+        <Stack spacing={3} sx={{ color: "text.primary", opacity: "0.7" }}>
             <Box component="div">
-                <Typography fontWeight="bold" variant="h3">
+                <Typography fontWeight="bold" variant="h2">
                     C3 Open Campus 2023
                 </Typography>
             </Box>
             <Stack sx={{ pl: 3 }} spacing={1} direction="row">
-                <Typography fontWeight="bold" variant="h3">
+                <Typography fontWeight="bold" variant="h2">
                     July
                 </Typography>
                 <Stack direction="row">
                     <Typography
                         letterSpacing={-3}
                         fontWeight="bold"
-                        variant="h3"
+                        variant="h2"
                         sx={{ pr: 0.5 }}
                     >
                         15
                     </Typography>
                     <Typography
-                        variant="h5"
+                        variant="h4"
                         sx={{
                             textOrientation: "mixed",
                             writingMode: "vertical-lr",
@@ -42,13 +42,13 @@ export const TopTitle = () => {
                     <Typography
                         letterSpacing={-3}
                         fontWeight="bold"
-                        variant="h3"
+                        variant="h2"
                         sx={{ pr: 0.5 }}
                     >
                         16
                     </Typography>
                     <Typography
-                        variant="h5"
+                        variant="h4"
                         sx={{
                             textOrientation: "mixed",
                             writingMode: "vertical-lr",

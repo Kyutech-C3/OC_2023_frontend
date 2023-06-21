@@ -10,6 +10,7 @@ export const CategoryOutlineCard = ({
     const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
     return (
         <Box
+            id={category.toUpperCase()}
             component="div"
             sx={{
                 userSelect: "none",
@@ -46,8 +47,15 @@ export const CategoryOutlineCard = ({
                             opacity: "70%",
                             textTransform: "uppercase",
                             fontWeight: 600,
-                            textShadow:
-                                "2px 2px 4px rgba(0, 0, 0, 1), -2px -2px 4px rgba(0, 0, 0, 0.25)",
+                            textShadow: `2px 2px 4px rgba(${
+                                isDarkMode ? 0 : 255
+                            }, ${isDarkMode ? 0 : 255}, ${
+                                isDarkMode ? 0 : 255
+                            }, 1), -2px -2px 4px rgba(${
+                                isDarkMode ? 0 : 255
+                            }, ${isDarkMode ? 0 : 255}, ${
+                                isDarkMode ? 0 : 255
+                            }, 0.25)`,
                         }}
                     >
                         {category}
@@ -57,10 +65,19 @@ export const CategoryOutlineCard = ({
                             sx={{
                                 pl: 5,
                                 letterSpacing: 5,
-                                textShadow:
-                                    "2px 2px 4px rgba(0, 0, 0, 1), -2px -2px 4px rgba(0, 0, 0, 0.25)",
+                                textShadow: `2px 2px 4px rgba(${
+                                    isDarkMode ? 0 : 255
+                                }, ${isDarkMode ? 0 : 255}, ${
+                                    isDarkMode ? 0 : 255
+                                }, ${
+                                    isDarkMode ? 0 : 255
+                                }), -2px -2px 4px rgba(${
+                                    isDarkMode ? 0 : 255
+                                }, ${isDarkMode ? 0 : 255}, ${
+                                    isDarkMode ? 0 : 255
+                                }, 0.25)`,
                             }}
-                            variant="h5"
+                            variant="h4"
                         >
                             {caption}
                         </Typography>
@@ -78,8 +95,15 @@ export const CategoryOutlineCard = ({
                                 mt: "auto",
                                 minWidth: "300px",
                                 border: "3px solid black",
-                                boxShadow:
-                                    "2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(0, 0, 0, 0.25)",
+                                boxShadow: `2px 2px 4px rgba(${
+                                    isDarkMode ? 0 : 255
+                                }, ${isDarkMode ? 0 : 255}, ${
+                                    isDarkMode ? 0 : 255
+                                }, 0.4), -2px -2px 4px rgba(${
+                                    isDarkMode ? 0 : 255
+                                },${isDarkMode ? 0 : 255}, ${
+                                    isDarkMode ? 0 : 255
+                                }, 0.25)`,
                                 borderRadius: "999px",
                                 fontSize: "20px",
                                 fontWeight: "bold",
