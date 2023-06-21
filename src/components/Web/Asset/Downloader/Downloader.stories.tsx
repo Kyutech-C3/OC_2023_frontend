@@ -4,7 +4,7 @@ import React from "react";
 import { Downloader } from "./Downloader";
 
 export default {
-    title: "Web/Downloader",
+    title: "Web/Asset/Downloader",
     component: Downloader,
     tags: ["autodocs"],
     parameters: {

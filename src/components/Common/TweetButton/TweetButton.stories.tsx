@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { TweetButton } from "./TweetButton";
 
 export default {
-    title: "web/TweetButton",
+    title: "Common/TweetButton",
     component: TweetButton,
     tags: ["autodocs"],
     parameters: {

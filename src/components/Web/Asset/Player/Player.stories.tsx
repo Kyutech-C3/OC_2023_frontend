@@ -4,7 +4,7 @@ import React from "react";
 import { Player } from "./Player";
 
 export default {
-    title: "Web/Player",
+    title: "Web/Asset/Player",
     component: Player,
     tags: ["autodocs"],
     parameters: {

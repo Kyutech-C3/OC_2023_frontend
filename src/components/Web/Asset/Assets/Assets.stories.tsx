@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Assets } from "./Assets";
 
 export default {
-    title: "Web/Assets",
+    title: "Web/Asset/Assets",
     component: Assets,
     tags: ["autodocs"],
     parameters: {
