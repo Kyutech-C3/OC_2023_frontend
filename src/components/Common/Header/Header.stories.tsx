@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Header } from "./Header";
 
@@ -11,8 +10,6 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof Header>;
+} as Meta<typeof Header>;
 
-const Template: ComponentStory<typeof Header> = () => <Header />;
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof Header> = {};

@@ -1,21 +1,15 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { RedirectMap } from "./RedirectMap";
 
 export default {
-  title: "Web/RedirectMap",
-  component: RedirectMap,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
-  argTypes: {
-  },
-} as ComponentMeta<typeof RedirectMap>;
+    title: "Web/RedirectMap",
+    component: RedirectMap,
+    tags: ["autodocs"],
+    parameters: {
+        layout: "fullscreen",
+    },
+    argTypes: {},
+} as Meta<typeof RedirectMap>;
 
-const Template: ComponentStory<typeof RedirectMap> = () => <RedirectMap  />;
-export const Default = Template.bind({});
-Default.args = {
-
-};
+export const Default: StoryObj<typeof RedirectMap> = {};

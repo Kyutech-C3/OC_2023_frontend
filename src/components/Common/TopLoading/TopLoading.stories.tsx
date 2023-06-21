@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { TopLoading } from "./TopLoading";
 
@@ -10,8 +10,6 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof TopLoading>;
+} as Meta<typeof TopLoading>;
 
-const Template: ComponentStory<typeof TopLoading> = () => <TopLoading />;
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: StoryObj<typeof TopLoading> = {};

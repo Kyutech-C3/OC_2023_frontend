@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Player } from "./Player";
 
@@ -11,10 +10,10 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof Player>;
+} as Meta<typeof Player>;
 
-const Template: ComponentStory<typeof Player> = (args) => <Player {...args} />;
-export const Default = Template.bind({});
-Default.args = {
-    url: "",
+export const Default: StoryObj<typeof Player> = {
+    args: {
+        url: "",
+    },
 };

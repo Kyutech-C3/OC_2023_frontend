@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Downloader } from "./Downloader";
 
@@ -11,12 +10,10 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof Downloader>;
+} as Meta<typeof Downloader>;
 
-const Template: ComponentStory<typeof Downloader> = (args) => (
-    <Downloader {...args} />
-);
-export const Default = Template.bind({});
-Default.args = {
-    url: "",
+export const Default: StoryObj<typeof Downloader> = {
+    args: {
+        url: "",
+    },
 };
