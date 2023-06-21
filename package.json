@@ -43,12 +43,12 @@
     },
     "devDependencies": {
         "@babel/core": "^7.21.0",
-        "@storybook/addon-essentials": "^7.0.0-beta.55",
-        "@storybook/addon-interactions": "^7.0.0-beta.55",
-        "@storybook/addon-links": "^7.0.0-beta.55",
-        "@storybook/blocks": "^7.0.0-alpha.8",
-        "@storybook/nextjs": "^7.0.0-beta.55",
-        "@storybook/react": "^7.0.0-beta.55",
+        "@storybook/addon-essentials": "^7.0.22",
+        "@storybook/addon-interactions": "^7.0.22",
+        "@storybook/addon-links": "^7.0.22",
+        "@storybook/blocks": "^7.0.22",
+        "@storybook/nextjs": "^7.0.22",
+        "@storybook/react": "^7.0.22",
         "@types/react-infinite-scroller": "^1.2.3",
         "@types/uuid": "^9.0.2",
         "babel-loader": "^8.3.0",
@@ -56,9 +56,9 @@
         "eslint-plugin-jsx-a11y": "^6.7.1",
         "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-storybook": "^0.6.11",
+        "eslint-plugin-storybook": "^0.6.12",
         "file-loader": "^6.2.0",
         "hygen": "^6.2.11",
-        "storybook": "^7.0.0-beta.55"
+        "storybook": "^7.0.22"
     }
 }
