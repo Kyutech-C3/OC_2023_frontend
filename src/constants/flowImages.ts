@@ -1,0 +1,37 @@
+export const imagePaths = [
+    [
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/2ef09f83-1343-4698-a774-7348e9a4e271/origin.jpg",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/15311497-d30f-4e95-8448-adbf2bbb91f9/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/edfd1db3-4f4f-4139-a553-ded01b5bf40e/origin.jpg",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/6a38efb6-cc8f-4161-ac45-36359939d252/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/282d7984-ad63-4c57-8e82-78321520a999/origin.png",
+    ],
+    [
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/a8337c51-f674-456d-928b-b73cc509a51b/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/d36e67af-22a0-40cc-88db-f4bd06e5f896/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/bbdd3cc5-f481-4ffa-a905-3bb34eaf80b6/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/584a55f5-f9c9-4205-b551-2f4f24add49c/origin.jpeg",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/025c3108-afab-4987-81e4-b5e4498335c1/origin.png",
+    ],
+    [
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/87f05c92-06b1-4418-a8a0-1fc8034a090b/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/ae689712-1601-438a-9dad-38eec1327bc4/origin.jpg",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/8bc0c25a-6f0f-45cd-b9fb-e193c33251a4/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/c8843767-e80f-4cea-9aae-0d4d01cfa014/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/b042e49a-6147-4a20-b7ca-8c8c0a0b37ff/origin.jpeg",
+    ],
+    [
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/11736808-541c-4320-a5c9-2f0a27729a47/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/20c38a31-d4af-4337-80a7-d7c822591247/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/1685eef1-52f9-4f9f-85b9-fc0ff0079356/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/e14323fc-b65b-4eda-9e93-5dd1ab90e1be/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/ace2babe-446d-4aa0-8049-e5084a4ec4d1/origin.png",
+    ],
+    [
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/6fb1b615-59fe-46eb-98fb-911f5945b2d1/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/dacb8573-9034-4e86-bf64-7c90dd6b754a/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/053ac1a0-ddbc-4516-8075-deb7b4d89456/origin.jpg",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/ee6739e3-67f2-4de9-9414-4200570241c6/origin.png",
+        "https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/330c0cea-249a-4ade-ba4c-3088717f0826/origin.png",
+    ],
+];
