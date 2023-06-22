@@ -10,6 +10,25 @@ const ScrollButton = ({ text, color }: ScrollButtonProps) => {
                 width: "25vh",
                 justifyContent: "start",
                 borderRadius: "0",
+                transition: "scale 0.2s",
+                ":hover": {
+                    scale: "1.2",
+                    zIndex: 100,
+                    ":before": {
+                        width: "100%",
+                    },
+                },
+                overflow: "hidden",
+                ":before": {
+                    content: '""',
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    width: 0,
+                    height: "100%",
+                    background: "rgba(255, 255, 255, 0.3)",
+                    transition: "width 0.3s ease",
+                },
             }}
             href={`#${text}`}
         >
@@ -24,6 +43,7 @@ const ScrollButton = ({ text, color }: ScrollButtonProps) => {
             <Typography
                 variant="h6"
                 sx={{
+                    fontWeight: 600,
                     textOrientation: "mixed",
                     alignSelf: "start",
                     writingMode: "vertical-lr",
