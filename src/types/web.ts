@@ -53,3 +53,10 @@ export type SuggestTagsProps = {
 export type CategorySelectProps = {
     handleCheckboxChange: (label: string) => void;
 };
+
+export type CategoryOutlineCardProps = {
+    category: string;
+    backgroundImagePath: string;
+    caption: string;
+    redirectPath: string;
+};

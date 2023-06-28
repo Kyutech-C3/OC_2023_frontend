@@ -1,8 +1,7 @@
 ---
 to: <%= abs_path %>/<%=name%>.stories.tsx
 ---
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { <%= name %> } from "./<%= name %>";
 
@@ -15,12 +14,10 @@ export default {
   },
   argTypes: {
   },
-} as ComponentMeta<typeof <%= name %>>;
+} as Meta<typeof <%= name %>>;
 
-const Template: ComponentStory<typeof <%= name %>> = (<% if (have_props) { %> args  <% } %>) => <<%= name %> <% if (have_props) { %> {...args}  <% } %> />;
-export const Default = Template.bind({});
-Default.args = {
-<% if (have_props) { %>
-  str: "Hello, storybook!",
-<%}%>
-};
+export const Default: StoryObj<typeof <%= name %>> = {<% if (have_props) { %>
+  args:{
+    str: "Hello, storybook!",
+  }
+<%}%>};

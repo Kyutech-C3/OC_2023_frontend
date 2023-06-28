@@ -1,21 +1,15 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { SideBar } from "./SideBar";
 
 export default {
-  title: "Web/SideBar",
-  component: SideBar,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
-  argTypes: {
-  },
-} as ComponentMeta<typeof SideBar>;
+    title: "Web/SideBar",
+    component: SideBar,
+    tags: ["autodocs"],
+    parameters: {
+        layout: "fullscreen",
+    },
+    argTypes: {},
+} as Meta<typeof SideBar>;
 
-const Template: ComponentStory<typeof SideBar> = () => <SideBar  />;
-export const Default = Template.bind({});
-Default.args = {
-
-};
+export const Default: StoryObj<typeof SideBar> = {};

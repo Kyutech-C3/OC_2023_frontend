@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { MarkdownViewer } from "./MarkdownViewer";
 
@@ -11,12 +10,9 @@ export default {
         layout: "fullscreen",
     },
     argTypes: {},
-} as ComponentMeta<typeof MarkdownViewer>;
-
-const Template: ComponentStory<typeof MarkdownViewer> = (args) => (
-    <MarkdownViewer {...args} />
-);
-export const Default = Template.bind({});
-Default.args = {
-    rawText: "",
+} as Meta<typeof MarkdownViewer>;
+export const Default: StoryObj<typeof MarkdownViewer> = {
+    args: {
+        rawText: "",
+    },
 };
