@@ -1,8 +1,11 @@
+import { C3Outline } from "@/components/Web/C3Outline/C3Outline";
 import { CategoryOutlines } from "@/components/Web/CategoryOutlines/CategoryOutlines";
+import { OwnerComment } from "@/components/Web/OwnerComment/OwnerComment";
+import { ScrollTo } from "@/components/Web/ScrollTo/ScrollTo";
 import { TopBackground } from "@/components/Web/TopBackground/TopBackground";
 import { TopScroll } from "@/components/Web/TopScroll/TopScroll";
 import { TopTitle } from "@/components/Web/TopTitle/TopTitle";
-import { Box, useMediaQuery } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 
 const Web = () => {
     return (
@@ -22,8 +25,8 @@ const Web = () => {
                 }}
             >
                 <TopBackground />
-
                 <TopTitle />
+                <ScrollTo to="ownerComment" />
             </Box>
             <Box
                 component="div"
@@ -31,6 +34,9 @@ const Web = () => {
             >
                 <TopScroll />
             </Box>
+            <OwnerComment />
+            <Divider sx={{ backgroundColor: "white" }} />
+            <C3Outline />
             <CategoryOutlines />
         </Box>
     );

@@ -10,6 +10,13 @@ export const C3Outline = () => {
                 minHeight: "100vh",
                 p: 3,
                 pt: 0,
+                width: "100%",
+                height: "100vh",
+                backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
+                    isDarkMode ? 0 : 255
+                }, ${isDarkMode ? 0 : 255},0.85)`,
+                backdropFilter: "blur(1px)",
+                color: "text.primary",
             }}
         >
             <AboutC3 />
