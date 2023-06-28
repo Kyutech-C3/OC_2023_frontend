@@ -10,7 +10,7 @@ export const CategoryOutlineCard = ({
     const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
     return (
         <Box
-            id={category.toUpperCase()}
+            id={category}
             component="div"
             sx={{
                 userSelect: "none",
@@ -83,7 +83,6 @@ export const CategoryOutlineCard = ({
                         </Typography>
                     </Box>
 
-                    {/* <Box component="div" flexGrow={1} /> */}
                     <Box component="div" sx={{ textAlign: "center" }}>
                         <Button
                             href={redirectPath}

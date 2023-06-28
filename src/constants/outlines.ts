@@ -18,7 +18,7 @@ export const outlines = [
         redirectPath: "/web/artifact/game",
     },
     {
-        category: "2DCG",
+        category: "2dcg",
         backgroundImagePath:
             "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
         caption:
@@ -26,14 +26,14 @@ export const outlines = [
         redirectPath: "/web/artifact/cg2d",
     },
     {
-        category: "3DCG",
+        category: "3dcg",
         backgroundImagePath:
             "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
         caption: "",
         redirectPath: "/web/artifact/cg3d",
     },
     {
-        category: "MUSIC",
+        category: "music",
         backgroundImagePath:
             "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
         caption: "",

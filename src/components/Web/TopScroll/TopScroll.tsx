@@ -1,10 +1,19 @@
+import { topHoveringAtom } from "@/state/topHovering";
 import { ScrollButtonProps } from "@/types/web";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { Link as Scroll } from "react-scroll";
+import { useSetRecoilState } from "recoil";
 
 const ScrollButton = ({ text, color }: ScrollButtonProps) => {
+    const setHovering = useSetRecoilState(topHoveringAtom);
     return (
-        <Scroll to={text} smooth={true} duration={600}>
+        <Scroll
+            to={text}
+            smooth={true}
+            duration={600}
+            onMouseEnter={() => setHovering({ hovering: text })}
+            onMouseLeave={() => setHovering({ hovering: "" })}
+        >
             <Button
                 color={color}
                 variant="contained"
@@ -33,7 +42,6 @@ const ScrollButton = ({ text, color }: ScrollButtonProps) => {
                         transition: "width 0.3s ease",
                     },
                 }}
-                href={`#${text}`}
             >
                 <Box
                     component="div"
@@ -63,6 +71,7 @@ const ScrollButton = ({ text, color }: ScrollButtonProps) => {
                         justifyContent: "start",
                         borderRadius: "0",
                         opacity: "0.8",
+                        textTransform: "uppercase",
                     }}
                 >
                     {text}
@@ -74,12 +83,13 @@ const ScrollButton = ({ text, color }: ScrollButtonProps) => {
 
 export const TopScroll = () => {
     const categories: ScrollButtonProps[] = [
-        { color: "hack", text: "HACK" },
-        { color: "game", text: "GAME" },
-        { color: "cg2d", text: "2DCG" },
-        { color: "cg3d", text: "3DCG" },
-        { color: "music", text: "MUSIC" },
+        { color: "hack", text: "hack" },
+        { color: "game", text: "game" },
+        { color: "cg2d", text: "2dcg" },
+        { color: "cg3d", text: "3dcg" },
+        { color: "music", text: "music" },
     ];
+
     return (
         <Stack sx={{ width: "25vh" }}>
             {categories.map((category, index) => (

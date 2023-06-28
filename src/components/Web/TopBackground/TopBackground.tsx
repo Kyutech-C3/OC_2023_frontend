@@ -1,11 +1,12 @@
 import { imagePaths } from "@/constants/topBackground";
-import { TopBackgroundProps } from "@/types/web";
+import { topHoveringAtom } from "@/state/topHovering";
 import { Box, Stack, useMediaQuery } from "@mui/material";
+import { useRecoilValue } from "recoil";
 
-export const TopBackground = ({ hovering }: TopBackgroundProps) => {
+export const TopBackground = () => {
     const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
     const isSmall = useMediaQuery("(min-width:800px)");
-
+    const { hovering } = useRecoilValue(topHoveringAtom);
     return (
         <Stack
             direction={isSmall ? "column" : "row"}
@@ -20,6 +21,7 @@ export const TopBackground = ({ hovering }: TopBackgroundProps) => {
         >
             {imagePaths.map(({ department, imagePath }, index) => (
                 <Box
+                    key={department}
                     component="div"
                     sx={{
                         backgroundImage: `url(${imagePath})`,

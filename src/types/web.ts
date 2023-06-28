@@ -8,7 +8,7 @@ export type TweetButtonProps = {
 };
 
 export type ScrollButtonProps = {
-    text: string;
+    text: TopBackgroundProps;
     color: ButtonProps["color"];
 };
 
@@ -60,10 +60,17 @@ export type CategoryOutlineCardProps = {
     caption: string;
     redirectPath: string;
 };
-export type TopBackgroundProps = {
-    hovering: "hack" | "game" | "2dcg" | "3dcg" | "music" | "";
+export type TopBackgroundAtomProps = {
+    hovering: TopBackgroundProps;
 };
 
 export type ImageIconProps = {
     src: string;
 };
+export type TopBackgroundProps =
+    | "hack"
+    | "game"
+    | "2dcg"
+    | "3dcg"
+    | "music"
+    | "";
