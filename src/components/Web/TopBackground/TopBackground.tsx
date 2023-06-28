@@ -37,7 +37,9 @@ export const TopBackground = () => {
                             : "polygon(100% 0%, 100% 50%, 0% 100%, 0% 50%)",
                         animation: `down 0.3s`,
                         animationDuration: `${index * 0.15 + 0.6}s`,
-                        transform: `scale(${hovering == department ? 1.1 : 1})`,
+                        transform: `scale(${
+                            hovering == department ? 1.1 : 1
+                        }) translateZ(0)`,
                         transition: "0.8s transform",
                         "@keyframes down": {
                             "0%": {
@@ -58,9 +60,9 @@ export const TopBackground = () => {
                             backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
                                 isDarkMode ? 0 : 255
                             }, ${isDarkMode ? 0 : 255},0.5)`,
-                            backdropFilter: "blur(3px)",
+                            backdropFilter: "blur(2px)",
                         }}
-                    ></Box>
+                    />
                 </Box>
             ))}
         </Stack>
