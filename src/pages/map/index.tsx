@@ -2,12 +2,12 @@ import { Canvas, MeshProps } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Site } from "../../components/Map/Site/Site";
 import { Plane } from "../../components/Map/Plane"
-import styles from "../../styles/map.module.css";
 import { Physics, useBox } from "@react-three/cannon";
 import { useRef } from "react";
 import { Mesh } from "three";
+import { Box } from "@mui/material";
 
-function Box(props: MeshProps) {
+function FallBox(props: MeshProps) {
     const [ref, api] = useBox(
         () => ({
             mass: 1,
@@ -26,20 +26,26 @@ function Box(props: MeshProps) {
 
 const Map = () => {
     return (
-        <div className={styles.map}>
-            <Canvas camera={{ position: [0, 2, -1] }} shadows style={{ height: "100%" }} className={styles.canvas}>
+        <Box component="div" sx={{
+            position: 'relative',
+            height: "100vh",
+            width: "100vw",
+            p: 0,
+            m: 0,
+        }}>
+            <Canvas camera={{ position: [0, 2, -1] }} shadows  >
                 <Physics
                     broadphase="SAP"
                     gravity={[0, -2.6, 0]}
                 >
                     <directionalLight position={[0, 10, 0]} castShadow />
                     <Plane />
-                    <Box />
+                    <FallBox />
                     <Site />
                     <OrbitControls target={[0, 0, 0]} />
-                </Physics>
-            </Canvas>
-        </div>
+                </Physics >
+            </Canvas >
+        </Box >
     );
 };
 
