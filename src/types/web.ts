@@ -60,3 +60,6 @@ export type CategoryOutlineCardProps = {
     caption: string;
     redirectPath: string;
 };
+export type TopBackgroundProps = {
+    hovering: "hack" | "game" | "2dcg" | "3dcg" | "music" | "";
+};

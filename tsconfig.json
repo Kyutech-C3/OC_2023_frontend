@@ -24,6 +24,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Map/Site/SitePhysics.jsx", "src/components/Map/Site/LoadModel.jsx", "src/components/Map/Site/Site.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Map/Site/SitePhysics.jsx", "src/components/Map/Site/LoadModel.jsx", "src/components/Map/Site/Site.tsx"],
   "exclude": ["node_modules"]
 }
