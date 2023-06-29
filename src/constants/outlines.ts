@@ -11,15 +11,13 @@ export const outlines = [
     {
         category: "game",
         backgroundImagePath: "image/background/game.png",
-
         caption:
             "GAME分野では、アクションゲームやノベルゲームなど、部員が作りたいと思ったゲームジャンルで自由に制作を行なっています。個人での制作もあれば、2DCGや3DCG、MUGICなど他の分野の人たちと協力しての制作も行なっています！また、GAME分野には企画書制作などもありプログラミング以外で制作に関わる人もいます。ゲームが好き、ゲームが作りたいという部員が多く、先輩達から技術を教われる良い環境です。",
         redirectPath: "/web/artifact/game",
     },
     {
         category: "2dcg",
-        backgroundImagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        backgroundImagePath: "image/background/2dcg.png",
         caption:
             "　2DCGでは、主にデジタルイラストや動画など、主に2Dで表現されるものを含みます。\n　デジタルイラストは、文字通りデジタルでイラストを描きます。アナログで絵を描くのとは違う表現が可能です。パソコンや専用機器がなくても、スマートフォンやタブレットで気軽に描くことができます！\n　動画制作は、複数種類の画像,音楽,動画に動きやエフェクトを付け、組み合わせることで 新たな映像作品やPVなどを作り上げることです。無料の動画編集ソフトを使って気軽に制作できます。",
         redirectPath: "/web/artifact/cg2d",
