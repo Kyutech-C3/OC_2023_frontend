@@ -10,8 +10,8 @@ export const outlines = [
     },
     {
         category: "game",
-        backgroundImagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        backgroundImagePath: "image/background/game.png",
+
         caption:
             "GAME分野では、アクションゲームやノベルゲームなど、部員が作りたいと思ったゲームジャンルで自由に制作を行なっています。個人での制作もあれば、2DCGや3DCG、MUGICなど他の分野の人たちと協力しての制作も行なっています！また、GAME分野には企画書制作などもありプログラミング以外で制作に関わる人もいます。ゲームが好き、ゲームが作りたいという部員が多く、先輩達から技術を教われる良い環境です。",
         redirectPath: "/web/artifact/game",
