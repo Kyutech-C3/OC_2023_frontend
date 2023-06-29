@@ -12,7 +12,7 @@ const MessageTitle = () => {
         "#FFE587",
         "#BCFFD3",
     ];
-    const fontSize = ["35vw", "33vw", "31vw", "29vw", "27vw", "25vw", "23vw"];
+    const fontSize = ["13vw", "11vw", "9vw", "7vw", "5vw", "4vw", "3vw"];
 
     return (
         <Typography>
