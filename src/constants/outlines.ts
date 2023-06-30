@@ -31,8 +31,7 @@ export const outlines = [
     },
     {
         category: "music",
-        backgroundImagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        backgroundImagePath: "image/background/music.png",
         caption: "",
         redirectPath: "/web/artifact/music",
     },
