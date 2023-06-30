@@ -4,9 +4,9 @@ import { useBox } from "@react-three/cannon";
 export const Plane = (props: any) => {
     const ref = useRef();
     const [_, api] = useBox(() => ({
-        type: 'Static',
+        type: 'Kinematic',
         position: [0, -1, 0],
-        args: [10000, 0, 10000],
+        args: [10000, 1, 10000],
         friction: 0
     }));
 
