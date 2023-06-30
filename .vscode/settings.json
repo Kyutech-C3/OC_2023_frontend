@@ -9,12 +9,12 @@
     }
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     }
   },
   "npm.packageManager": "pnpm",
-  "typescript.tsdk": "node_modules/.pnpm/typescript@4.7.4/node_modules/typescript/lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }
