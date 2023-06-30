@@ -13,11 +13,10 @@ export const imagePaths = [
     },
     {
         department: "3dcg",
-        imagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        imagePath: "image/background/3dcg.png",
     },
     {
         department: "music",
-        imagePath: "image/background/game.png",
+        imagePath: "image/background/music.png",
     },
 ];

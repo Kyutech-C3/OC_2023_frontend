@@ -24,8 +24,7 @@ export const outlines = [
     },
     {
         category: "3dcg",
-        backgroundImagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        backgroundImagePath: "image/background/3dcg.png",
         caption: "",
         redirectPath: "/web/artifact/cg3d",
     },
