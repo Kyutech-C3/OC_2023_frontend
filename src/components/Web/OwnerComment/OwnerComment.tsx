@@ -11,7 +11,6 @@ export const OwnerComment = () => {
             component="div"
             sx={{ position: "relative", color: "text.primary" }}
         >
-            <FlowBackImages />
             <Box
                 component="div"
                 sx={{
