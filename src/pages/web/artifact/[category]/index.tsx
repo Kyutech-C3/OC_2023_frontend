@@ -14,8 +14,8 @@ const CategoryTop = () => {
             typeof category == "undefined"
                 ? ""
                 : typeof category == "string"
-                ? category
-                : category[0]
+                    ? category
+                    : category[0]
         )
     ) {
         if (router.isReady) {
@@ -27,19 +27,37 @@ const CategoryTop = () => {
     );
     useTopLoading({ isLoading, message: "getting" });
     return (
-        <Box component="div" sx={{ mt: 5 }}>
+        <Box component="div" sx={{
+        }}>
+            <Box component="div" sx={{
+                position: "fixed",
+                backgroundImage: `url(/image/background/${category}.webp)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                width: "100vw",
+                height: "110vh",
+                zIndex: -10
+            }} />
+            <Box component="div" sx={{
+                position: "fixed",
+                backgroundColor: "#000000aa",
+                width: "100vw",
+                height: "110vh",
+                zIndex: -5
+            }} />
+
             <InfiniteScroll
                 loadMore={() => {
                     if (works.length != 0) {
                         refetch(
-                            `newest_work_id=${works[works.length - 1].id}`,
+                            `newest_work_id=${works[works.length - 1].id}&tag_names=${category}`,
                             false
                         );
                     }
                 }}
                 hasMore={isContinue}
             >
-                <Grid container justifyContent={"center"} spacing={3}>
+                <Grid container justifyContent={"center"} spacing={6} sx={{ backgroundColor: "#00000066", pt: 5, }}>
                     {works?.map((artifact: Work, index: number) => (
                         <Grid item key={index}>
                             <Artifact {...artifact} />
