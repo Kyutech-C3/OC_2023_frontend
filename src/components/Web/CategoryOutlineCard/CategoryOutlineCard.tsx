@@ -28,13 +28,12 @@ export const CategoryOutlineCard = ({
                     backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
                         isDarkMode ? 0 : 255
                     }, ${isDarkMode ? 0 : 255},0.5)`,
-                    backdropFilter: "blur(10px)",
+                    backdropFilter: "blur(4px)",
                 }}
             >
                 <Box
                     component="div"
                     sx={{
-                        p: 7,
                         display: "flex",
                         height: "100%",
                         flexDirection: "column",
@@ -42,8 +41,10 @@ export const CategoryOutlineCard = ({
                     }}
                 >
                     <Typography
-                        variant="h1"
                         sx={{
+                            pl: "4vmin",
+                            pt: "4vh",
+                            fontSize: "10vmin",
                             opacity: "70%",
                             textTransform: "uppercase",
                             fontWeight: 600,
@@ -63,8 +64,10 @@ export const CategoryOutlineCard = ({
                     <Box component="div">
                         <Typography
                             sx={{
-                                pl: 5,
-                                letterSpacing: 5,
+                                pt: "4vh",
+                                px: "6vmin",
+                                fontSize: "4vmin",
+                                letterSpacing: "1vmin",
                                 textShadow: `2px 2px 4px rgba(${
                                     isDarkMode ? 0 : 255
                                 }, ${isDarkMode ? 0 : 255}, ${
@@ -76,62 +79,60 @@ export const CategoryOutlineCard = ({
                                 }, ${isDarkMode ? 0 : 255}, ${
                                     isDarkMode ? 0 : 255
                                 }, 0.25)`,
+                                whiteSpace: "break-spaces",
                             }}
-                            variant="h4"
                         >
                             {caption}
                         </Typography>
                     </Box>
-
-                    <Box component="div" sx={{ textAlign: "center" }}>
-                        <Button
-                            href={redirectPath}
-                            endIcon={<KeyboardDoubleArrowRightIcon />}
-                            sx={{
-                                p: 2,
-                                overflow: "hidden",
-                                width: "30vw",
-                                mt: "auto",
-                                minWidth: "300px",
-                                border: "3px solid black",
-                                boxShadow: `2px 2px 4px rgba(${
-                                    isDarkMode ? 0 : 255
-                                }, ${isDarkMode ? 0 : 255}, ${
-                                    isDarkMode ? 0 : 255
-                                }, 0.4), -2px -2px 4px rgba(${
-                                    isDarkMode ? 0 : 255
-                                },${isDarkMode ? 0 : 255}, ${
-                                    isDarkMode ? 0 : 255
-                                }, 0.25)`,
+                    <Button
+                        href={redirectPath}
+                        endIcon={<KeyboardDoubleArrowRightIcon />}
+                        sx={{
+                            marginX: "auto",
+                            p: 2,
+                            mb: "7vh",
+                            overflow: "hidden",
+                            width: "30vw",
+                            mt: "auto",
+                            minWidth: "300px",
+                            border: "3px solid black",
+                            boxShadow: `2px 2px 4px rgba(${
+                                isDarkMode ? 0 : 255
+                            }, ${isDarkMode ? 0 : 255}, ${
+                                isDarkMode ? 0 : 255
+                            }, 0.4), -2px -2px 4px rgba(${
+                                isDarkMode ? 0 : 255
+                            },${isDarkMode ? 0 : 255}, ${
+                                isDarkMode ? 0 : 255
+                            }, 0.25)`,
+                            borderRadius: "999px",
+                            fontSize: "20px",
+                            fontWeight: "bold",
+                            color: "text.primary",
+                            backgroundColor: "rgba(255, 255, 255, 0.2)",
+                            transition: "background-color 0.3s ease",
+                            ":before": {
+                                content: '""',
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: 0,
+                                height: "100%",
+                                background:
+                                    "linear-gradient(rgba(255, 255, 0, 0.3),rgba(0, 255, 0, 0.3))",
+                                transition: "width 0.3s ease",
                                 borderRadius: "999px",
-                                fontSize: "20px",
-                                fontWeight: "bold",
-                                color: "text.primary",
-                                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                                alignItems: "center",
-                                transition: "background-color 0.3s ease",
+                            },
+                            ":hover": {
                                 ":before": {
-                                    content: '""',
-                                    position: "absolute",
-                                    left: 0,
-                                    top: 0,
-                                    width: 0,
-                                    height: "100%",
-                                    background:
-                                        "linear-gradient(rgba(255, 255, 0, 0.3),rgba(0, 255, 0, 0.3))",
-                                    transition: "width 0.3s ease",
-                                    borderRadius: "999px",
+                                    width: "100%",
                                 },
-                                ":hover": {
-                                    ":before": {
-                                        width: "100%",
-                                    },
-                                },
-                            }}
-                        >
-                            もっと見る
-                        </Button>
-                    </Box>
+                            },
+                        }}
+                    >
+                        もっと見る
+                    </Button>
                 </Box>
             </Box>
         </Box>

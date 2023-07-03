@@ -5,14 +5,14 @@ export const outlines = [
         category: "hack",
         backgroundImagePath: "image/background/hack.png",
         caption:
-            "Hackでは、主に「人の役に立つものをプログラミングで作ること」を行っています。\n製作物は、Webサイト・Bot・Windowsアプリ・スマホアプリ・OSなど様々なものを生み出しています。実用的に役に立つように見えなくても、人を笑わせることで役に立っている製作物もあります！\nまた、ハッカソンや競技プログラミング、CTFをしている部員もおり、プログラミングに関して活発な活動が行われています！",
+            "　Hackでは、主に「人の役に立つものをプログラミングで作ること」を行っています。\n　製作物は、Webサイト・Bot・Windowsアプリ・スマホアプリ・OSなど様々なものを生み出しています。実用的に役に立つように見えなくても、人を笑わせることで役に立っている製作物もあります！\n　また、ハッカソンや競技プログラミング、CTFをしている部員もおり、プログラミングに関して活発な活動が行われています！",
         redirectPath: "/web/artifact/hack",
     },
     {
         category: "game",
         backgroundImagePath: "image/background/game.png",
         caption:
-            "GAME分野では、アクションゲームやノベルゲームなど、部員が作りたいと思ったゲームジャンルで自由に制作を行なっています。個人での制作もあれば、2DCGや3DCG、MUGICなど他の分野の人たちと協力しての制作も行なっています！また、GAME分野には企画書制作などもありプログラミング以外で制作に関わる人もいます。ゲームが好き、ゲームが作りたいという部員が多く、先輩達から技術を教われる良い環境です。",
+            " GAME分野では、アクションゲームやノベルゲームなど、部員が作りたいと思ったゲームジャンルで自由に制作を行っています。\n　個人での制作もあれば、2DCGや3DCG、MUSICなど他の分野の人たちと協力しての制作も行っています！また、GAME分野には企画書制作などもありプログラミング以外で制作に関わる人もいます。\n　ゲームが好き、ゲームが作りたいという部員が多く、先輩達から技術を教われる良い環境です。",
         redirectPath: "/web/artifact/game",
     },
     {
@@ -31,7 +31,8 @@ export const outlines = [
     {
         category: "music",
         backgroundImagePath: "image/background/music.png",
-        caption: "",
+        caption:
+            "MUSICコミュニティでは、DAWを用いた音楽制作を行っています。一人黙々と楽曲を作ったり、楽曲提供により他のコミュニティと協力して作品を作り上げたりと、さまざまな活動を体験することができます。",
         redirectPath: "/web/artifact/music",
     },
 ];

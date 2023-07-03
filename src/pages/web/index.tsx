@@ -5,14 +5,18 @@ import { ScrollTo } from "@/components/Web/ScrollTo/ScrollTo";
 import { TopBackground } from "@/components/Web/TopBackground/TopBackground";
 import { TopScroll } from "@/components/Web/TopScroll/TopScroll";
 import { TopTitle } from "@/components/Web/TopTitle/TopTitle";
-import { Box, Divider } from "@mui/material";
+import { Box, Divider, useMediaQuery } from "@mui/material";
 
 const Web = () => {
+    const isSmall = useMediaQuery("(min-width:900px)");
+
     return (
         <Box
             component="div"
             sx={{ scrollSnapType: "y mandatory", userSelect: "none" }}
         >
+            <ScrollTo to="ownerComment" />
+
             <Box
                 component="div"
                 sx={{
@@ -28,12 +32,14 @@ const Web = () => {
                 <TopTitle />
                 <ScrollTo to="ownerComment" />
             </Box>
-            <Box
-                component="div"
-                sx={{ position: "absolute", right: 0, top: 0 }}
-            >
-                <TopScroll />
-            </Box>
+            {isSmall && (
+                <Box
+                    component="div"
+                    sx={{ position: "absolute", right: 0, top: 0 }}
+                >
+                    <TopScroll />
+                </Box>
+            )}
             <OwnerComment />
             <Divider sx={{ backgroundColor: "white" }} />
             <C3Outline />
