@@ -7,6 +7,7 @@ const ImageIcon: React.FC<ImageIconProps> = ({ src }) => {
         <Image
             src={src}
             alt={src}
+            style={{ margin: "auto" }}
             width={20}
             height={20}
             quality={100}
