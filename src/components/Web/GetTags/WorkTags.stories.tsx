@@ -4,7 +4,7 @@ import { WorkTags } from "./WorkTags";
 
 export default {
     title: "WorkTags",
-    component: WorkTags([]),
+    component: WorkTags,
     tags: ["autodocs"],
     parameters: {
         layout: "fullscreen",
@@ -17,4 +17,4 @@ const Template: ComponentStory<typeof WorkTags> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = [];
+Default.args = {};
