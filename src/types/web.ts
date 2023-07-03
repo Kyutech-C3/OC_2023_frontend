@@ -63,3 +63,7 @@ export type CategoryOutlineCardProps = {
 export type TopBackgroundProps = {
     hovering: "hack" | "game" | "2dcg" | "3dcg" | "music" | "";
 };
+
+export type ImageIconProps = {
+    src: string;
+};
