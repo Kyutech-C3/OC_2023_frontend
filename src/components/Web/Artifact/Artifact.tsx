@@ -3,6 +3,7 @@ import { getCategory } from "@/libs/getCategory";
 import { Work } from "@/types/common";
 import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
+import { WorkTags } from "../Tags/WorkTags";
 import { UserCard } from "../User/UserCard";
 
 export const Artifact = ({
@@ -50,8 +51,7 @@ export const Artifact = ({
                             alt={thumbnail.url}
                         />
                     </Box>
-                    {/* TODO:タグコンポーネントを追加する */}
-                    {isSmall && <>tag</>}
+                    {isSmall && <Box component="div" sx={{ p: 1, width: "200px", height: "100px", overflow: "auto" }}><WorkTags tags={tags} /></Box>}
                 </Stack>
                 <Stack spacing={1} sx={{ width: isSmall ? "10vw" : "30vw" }}>
                     <Box component="div">
@@ -81,10 +81,9 @@ export const Artifact = ({
                             <Date dateString={createdAt} />
                         </Stack>
                     </Box>
-                    {/* TODO:tagコンポーネントを追加する */}
-                    {!isSmall && <>tag</>}
+                    {!isSmall && <Box component="div" sx={{ p: 1, width: "100%", height: "100px", overflow: "auto" }}><WorkTags tags={tags} /></Box>}
                 </Stack>
             </Stack>
-        </Button>
+        </Button >
     );
 };
