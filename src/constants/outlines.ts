@@ -3,34 +3,34 @@ export const aboutC3 =
 export const outlines = [
     {
         category: "hack",
-        backgroundImagePath: "image/background/hack.png",
+        backgroundImagePath: "image/background/hack.webp",
         caption:
             "　Hackでは、主に「人の役に立つものをプログラミングで作ること」を行っています。\n　製作物は、Webサイト・Bot・Windowsアプリ・スマホアプリ・OSなど様々なものを生み出しています。実用的に役に立つように見えなくても、人を笑わせることで役に立っている製作物もあります！\n　また、ハッカソンや競技プログラミング、CTFをしている部員もおり、プログラミングに関して活発な活動が行われています！",
         redirectPath: "/web/artifact/hack",
     },
     {
         category: "game",
-        backgroundImagePath: "image/background/game.png",
+        backgroundImagePath: "image/background/game.webp",
         caption:
             " GAME分野では、アクションゲームやノベルゲームなど、部員が作りたいと思ったゲームジャンルで自由に制作を行っています。\n　個人での制作もあれば、2DCGや3DCG、MUSICなど他の分野の人たちと協力しての制作も行っています！また、GAME分野には企画書制作などもありプログラミング以外で制作に関わる人もいます。\n　ゲームが好き、ゲームが作りたいという部員が多く、先輩達から技術を教われる良い環境です。",
         redirectPath: "/web/artifact/game",
     },
     {
         category: "2dcg",
-        backgroundImagePath: "image/background/2dcg.png",
+        backgroundImagePath: "image/background/2dcg.webp",
         caption:
             "　2DCGでは、主にデジタルイラストや動画など、主に2Dで表現されるものを含みます。\n　デジタルイラストは、文字通りデジタルでイラストを描きます。アナログで絵を描くのとは違う表現が可能です。パソコンや専用機器がなくても、スマートフォンやタブレットで気軽に描くことができます！\n　動画制作は、複数種類の画像,音楽,動画に動きやエフェクトを付け、組み合わせることで 新たな映像作品やPVなどを作り上げることです。無料の動画編集ソフトを使って気軽に制作できます。",
         redirectPath: "/web/artifact/cg2d",
     },
     {
         category: "3dcg",
-        backgroundImagePath: "image/background/3dcg.png",
+        backgroundImagePath: "image/background/3dcg.webp",
         caption: "",
         redirectPath: "/web/artifact/cg3d",
     },
     {
         category: "music",
-        backgroundImagePath: "image/background/music.png",
+        backgroundImagePath: "image/background/music.webp",
         caption:
             "MUSICコミュニティでは、DAWを用いた音楽制作を行っています。一人黙々と楽曲を作ったり、楽曲提供により他のコミュニティと協力して作品を作り上げたりと、さまざまな活動を体験することができます。",
         redirectPath: "/web/artifact/music",
