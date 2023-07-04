@@ -10,7 +10,7 @@ export const C3Outline = () => {
             component="div"
             sx={{
                 pt: "3vmin",
-                pl: "4vmin",
+                pl: "7vmin",
                 width: "100%",
                 height: "100vh",
                 backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
@@ -23,7 +23,7 @@ export const C3Outline = () => {
             <AboutC3 />
             <Typography
                 sx={{
-                    fontSize: isSmall ? "32px" : "3.8vmin",
+                    fontSize: isSmall ? "30px" : "3.6vmin",
                     p: "4vmin",
                     textShadow: `2px 2px 4px rgba(${isDarkMode ? 0 : 255}, ${
                         isDarkMode ? 0 : 255

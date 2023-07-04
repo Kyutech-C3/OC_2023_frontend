@@ -28,7 +28,8 @@ export const CategoryOutlineCard = ({
                     backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
                         isDarkMode ? 0 : 255
                     }, ${isDarkMode ? 0 : 255},0.5)`,
-                    backdropFilter: "blur(4px)",
+                    backdropFilter: "blur(2px)",
+                    pl: 5,
                 }}
             >
                 <Box

@@ -3,6 +3,7 @@ import { CategoryOutlines } from "@/components/Web/CategoryOutlines/CategoryOutl
 import { OwnerComment } from "@/components/Web/OwnerComment/OwnerComment";
 import { RedirectMap } from "@/components/Web/RedirectMap/RedirectMap";
 import { ScrollTo } from "@/components/Web/ScrollTo/ScrollTo";
+import { SideBar } from "@/components/Web/SideBar/SideBar";
 import { TopBackground } from "@/components/Web/TopBackground/TopBackground";
 import { TopScroll } from "@/components/Web/TopScroll/TopScroll";
 import { TopTitle } from "@/components/Web/TopTitle/TopTitle";
@@ -24,7 +25,7 @@ const Web = () => {
                     display: "flex",
                     flexWrap: "wrap",
                     alignContent: "center",
-                    backdropFilter: "blur(10px)",
+                    backdropFilter: "blur(2px)",
                     width: "100%",
                     height: "100vh",
                 }}
@@ -41,6 +42,7 @@ const Web = () => {
                     <TopScroll />
                 </Box>
             )}
+            <SideBar />
             <OwnerComment />
             <Divider sx={{ backgroundColor: "white" }} />
             <C3Outline />
