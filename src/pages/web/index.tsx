@@ -1,6 +1,7 @@
 import { C3Outline } from "@/components/Web/C3Outline/C3Outline";
 import { CategoryOutlines } from "@/components/Web/CategoryOutlines/CategoryOutlines";
 import { OwnerComment } from "@/components/Web/OwnerComment/OwnerComment";
+import { RedirectMap } from "@/components/Web/RedirectMap/RedirectMap";
 import { ScrollTo } from "@/components/Web/ScrollTo/ScrollTo";
 import { TopBackground } from "@/components/Web/TopBackground/TopBackground";
 import { TopScroll } from "@/components/Web/TopScroll/TopScroll";
@@ -16,7 +17,7 @@ const Web = () => {
             sx={{ scrollSnapType: "y mandatory", userSelect: "none" }}
         >
             <ScrollTo to="ownerComment" />
-
+            <RedirectMap />
             <Box
                 component="div"
                 sx={{
