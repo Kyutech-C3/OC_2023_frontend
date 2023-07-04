@@ -1,7 +1,7 @@
 import Date from "@/components/Common/Date/Date";
+import { TweetButton } from "@/components/Common/TweetButton/TweetButton";
 import { Assets } from "@/components/Web/Asset/Assets/Assets";
 import { MarkdownViewer } from "@/components/Web/MarkdownViewer/MarkdownViewer";
-import { TweetButton } from "@/components/Common/TweetButton/TweetButton";
 import { UserCard } from "@/components/Web/User/UserCard";
 import { useTopLoading } from "@/hooks/common";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
@@ -25,6 +25,8 @@ const ArtifactDetail = () => {
             sx={{
                 width: "100vw",
                 height: "100vh",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
                 backgroundImage: `url(${data?.thumbnail?.url})`,
             }}
         >
@@ -60,7 +62,7 @@ const ArtifactDetail = () => {
                     }}
                     bgcolor={`${category}.dark`}
                 >
-                    <Stack>
+                    <Stack >
                         <Stack
                             component="div"
                             alignSelf="end"
@@ -86,6 +88,7 @@ const ArtifactDetail = () => {
                         <Stack
                             spacing={10}
                             mt={10}
+                            sx={{ height: "80vh" }}
                             color={`${category}.contrastText`}
                         >
                             <Stack
@@ -115,7 +118,9 @@ const ArtifactDetail = () => {
                             </Typography>
                             <Box
                                 component="div"
-                                sx={{ overflow: "auto", height: "300px" }}
+                                sx={{
+                                    overflow: "auto",
+                                }}
                                 pl={18}
                             >
                                 <MarkdownViewer rawText={data?.description} />
