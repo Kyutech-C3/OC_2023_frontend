@@ -1,6 +1,7 @@
+import { castCategory } from "@/libs/getCategory";
 import { CategoryOutlineCardProps } from "@/types/web";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 export const CategoryOutlineCard = ({
     category,
     backgroundImagePath,
@@ -41,14 +42,13 @@ export const CategoryOutlineCard = ({
                         justifyContent: "space-between",
                     }}
                 >
-                    <Typography
+                    <Stack
+                        direction="row"
                         sx={{
                             pl: "4vmin",
                             pt: "4vh",
-                            fontSize: "10vmin",
                             opacity: "70%",
                             textTransform: "uppercase",
-                            fontWeight: 600,
                             textShadow: `2px 2px 4px rgba(${
                                 isDarkMode ? 0 : 255
                             }, ${isDarkMode ? 0 : 255}, ${
@@ -58,10 +58,28 @@ export const CategoryOutlineCard = ({
                             }, ${isDarkMode ? 0 : 255}, ${
                                 isDarkMode ? 0 : 255
                             }, 0.25)`,
+                            alignItems: "baseline",
                         }}
                     >
-                        {category}
-                    </Typography>
+                        <Typography
+                            sx={{
+                                fontSize: "13vmin",
+                                fontWeight: 600,
+                                color: `${castCategory(category)}.dark`,
+                            }}
+                        >
+                            {category.slice(0, 1)}
+                        </Typography>
+                        <Typography
+                            sx={{
+                                fontSize: "9vmin",
+                                fontWeight: 600,
+                            }}
+                        >
+                            {category.slice(1, category.length)}
+                        </Typography>
+                    </Stack>
+
                     <Box component="div">
                         <Typography
                             sx={{
