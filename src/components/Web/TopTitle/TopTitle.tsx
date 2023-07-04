@@ -3,7 +3,13 @@ import { Box, Stack, Typography } from "@mui/material";
 
 export const TopTitle = () => {
     return (
-        <Stack spacing={3} sx={{ color: "text.primary", opacity: "0.7" }}>
+        <Stack
+            spacing={3}
+            sx={{
+                color: "text.primary",
+                opacity: "0.7",
+            }}
+        >
             <Box component="div">
                 <Typography fontWeight="bold" sx={{ fontSize: "5vmax" }}>
                     C3 Open Campus 2023

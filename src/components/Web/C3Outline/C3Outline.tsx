@@ -41,6 +41,8 @@ export const C3Outline = () => {
 };
 
 const AboutC3 = () => {
+    const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
     const characters = [
         {
             text: "A",
@@ -69,12 +71,12 @@ const AboutC3 = () => {
         },
         {
             text: "C",
-            color: "white",
+            color: isDarkMode ? "white" : "black",
             fontSize: "12vmin",
         },
         {
             text: "3",
-            color: "white",
+            color: isDarkMode ? "white" : "black",
             fontSize: "12vmin",
         },
         {

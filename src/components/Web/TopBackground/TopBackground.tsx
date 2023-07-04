@@ -15,7 +15,7 @@ export const TopBackground = () => {
                 width: "100vw",
                 height: "100vh",
                 overflow: "hidden",
-                backgroundColor: "black",
+                backgroundColor: isDarkMode ? "black" : "white",
                 zIndex: -100,
             }}
         >
@@ -25,8 +25,8 @@ export const TopBackground = () => {
                     component="div"
                     sx={{
                         backgroundImage: `url(${imagePath})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
+                        backgroundSize: "center",
+                        backgroundPosition: "bottom",
                         width: isSmall ? "32vw" : "100%",
                         height: isSmall ? "100%" : "32vh",
                         position: "absolute",
@@ -59,7 +59,9 @@ export const TopBackground = () => {
                             height: isSmall ? "100vh" : "100%",
                             backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
                                 isDarkMode ? 0 : 255
-                            }, ${isDarkMode ? 0 : 255},0.5)`,
+                            }, ${isDarkMode ? 0 : 255},${
+                                isDarkMode ? 0.5 : 0.7
+                            })`,
                             backdropFilter: "blur(2px)",
                         }}
                     />

@@ -27,7 +27,7 @@ export const CategoryOutlineCard = ({
                     height: "100vh",
                     backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
                         isDarkMode ? 0 : 255
-                    }, ${isDarkMode ? 0 : 255},0.5)`,
+                    }, ${isDarkMode ? 0 : 255},${isDarkMode ? 0.5 : 0.8})`,
                     backdropFilter: "blur(2px)",
                     pl: 5,
                 }}
@@ -97,7 +97,7 @@ export const CategoryOutlineCard = ({
                             width: "30vw",
                             mt: "auto",
                             minWidth: "300px",
-                            border: "3px solid black",
+                            border: `3px solid black`,
                             boxShadow: `2px 2px 4px rgba(${
                                 isDarkMode ? 0 : 255
                             }, ${isDarkMode ? 0 : 255}, ${
