@@ -47,8 +47,8 @@ const MessageTitle = () => {
                     style={{
                         color: color,
                         fontSize: fontSize,
-                        direction="row,
-                        fontWeight: bold,
+                        direction="row",
+                        fontWeight: "bold",
                     }}
                 >
                     {char}
