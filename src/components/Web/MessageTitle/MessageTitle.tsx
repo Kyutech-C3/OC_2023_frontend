@@ -1,33 +1,58 @@
 import { Typography } from "@mui/material";
 
 const MessageTitle = () => {
-    const text = "Message";
-    const characters = text.split("");
-    const colors = [
-        "#64F161",
-        "#FFE600",
-        "#7AFFA7",
-        "#FFB800",
-        "#BCFFD3",
-        "#FFE587",
-        "#BCFFD3",
+    const characters = [
+        {
+            char: "M",
+            color: "#64F161",
+            fontSize: "13vw",
+        },
+        {
+            char: "e",
+            color: "#FFE600",
+            fontSize: "11vw",
+        },
+        {
+            char: "s",
+            color: "#7AFFA7",
+            fontSize: "9vw",
+        },
+        {
+            char: "s",
+            color: "#FFB800",
+            fontSize: "8vw",
+        },
+        {
+            char: "a",
+            color: "#BCFFD3",
+            fontSize: "6vw",
+        },
+        {
+            char: "g",
+            color: "#FFE587",
+            fontSize: "5vw",
+        },
+        {
+            char: "e",
+            color: "#BCFFD3",
+            fontSize: "4vw",
+        },
     ];
-    const fontSize = ["13vw", "11vw", "9vw", "7vw", "5vw", "4vw", "3vw"];
 
     return (
-        <Typography>
-            {characters.map((character, index) => (
-                <span
+        <>
+            {characters.map(({ char, color, fontSize }, index) => (
+                <Typography
                     key={index}
                     style={{
-                        color: colors[index % colors.length],
-                        fontSize: fontSize[index % fontSize.length],
+                        color: color,
+                        fontSize: fontSize,
                     }}
                 >
-                    {character}
-                </span>
+                    {char}
+                </Typography>
             ))}
-        </Typography>
+        </>
     );
 };
 
