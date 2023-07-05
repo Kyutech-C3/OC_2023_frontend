@@ -41,12 +41,14 @@ const MessageTitle = () => {
 
     return (
         <>
-            {characters.map(({ char, color, fontSize }, index) => (
+            {characters.map(({ char, color, fontSize,fontWeight }, index) => (
                 <Typography
                     key={index}
                     style={{
                         color: color,
                         fontSize: fontSize,
+                        direction="row,
+                        fontWeight: bold,
                     }}
                 >
                     {char}
