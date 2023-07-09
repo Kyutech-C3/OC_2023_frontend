@@ -87,13 +87,13 @@ const ArtifactDetail = () => {
                                 text={`${process.env.NEXT_PUBLIC_FRONT_END_URL}${router.asPath}`}
                             />
                         </Stack>
-                        {!isSmall && <Box component="div" sx={{ height: "500px", overflow: "auto", opacity: 1 }}>
+                        {!isSmall && <Box component="div" sx={{ height: "500px", overflow: "auto", opacity: 1, backgroundColor: "white", textAlign: "-webkit-center", borderRadius: "20px" }}>
                             <Assets assets={data?.assets} />
                         </Box>}
                         <Stack
                             spacing={10}
                             mt={10}
-                            sx={{ height: "80vh" }}
+                            sx={{ height: "80vh", backgroundColor: isSmall ? "" : `${category}.light`, borderRadius: isSmall ? "" : "20px", p: isSmall ? "" : 3 }}
                             color={`${category}.contrastText`}
                         >
                             <Stack
@@ -112,7 +112,7 @@ const ArtifactDetail = () => {
                                 <Typography variant="h5" pl={isSmall ? 26 : 0}>
                                     投稿日:
                                 </Typography>
-                                <Date dateString={data?.created_at ?? ""} />
+                                <Date dateString={data?.created_at ?? ""} size="l" />
                             </Stack>
                             <Typography
                                 variant="h5"
