@@ -9,7 +9,7 @@ import { Player } from "../Player/Player";
 export const Assets = ({ assets }: Pick<AssetsModalProps, "assets">) => {
     return (
 
-        <List sx={{ overflow: "auto", width: "90vw" }}>
+        <List sx={{ overflow: "auto", width: "100%", height: "90vh" }}>
             {assets?.map((asset: Asset, index: number) => (
                 <ListItem
                     key={index}
@@ -28,6 +28,7 @@ export const Assets = ({ assets }: Pick<AssetsModalProps, "assets">) => {
                             sx={{
                                 width: "100%",
                                 height: "100%",
+                                minHeight: "50vh"
                             }}
                         >
                             <Image
