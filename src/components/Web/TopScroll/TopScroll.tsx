@@ -22,13 +22,11 @@ const ScrollButton = ({ text, color }: ScrollButtonProps) => {
                     width: "25vh",
                     justifyContent: "start",
                     borderRadius: "0",
-                    transition: "scale 0.2s",
+                    transition: "0.2s",
                     ":hover": {
+                        transform: "translateX(-20px)",
                         scale: "1.2",
                         zIndex: 100,
-                        ":before": {
-                            width: "100%",
-                        },
                     },
                     overflow: "hidden",
                     ":before": {
