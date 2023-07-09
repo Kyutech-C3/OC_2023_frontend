@@ -25,7 +25,7 @@ export type LinkRendererProps = {
     href: string | undefined;
     children: React.ReactNode;
 };
-export type AssetsProps = {
+export type AssetsModalProps = {
     isOpen: boolean;
     closeModal: () => void;
     assets: Asset[];
