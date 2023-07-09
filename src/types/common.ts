@@ -181,3 +181,7 @@ export type Work = {
     created_at: string;
     updated_at: string;
 };
+export type DateProps = {
+    dateString: string;
+    size: "s" | "m" | "l";
+};
