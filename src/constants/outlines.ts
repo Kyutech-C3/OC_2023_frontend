@@ -25,14 +25,15 @@ export const outlines = [
     {
         category: "3dcg",
         backgroundImagePath: "image/background/3dcg.webp",
-        caption: "",
+        caption:
+            "　Computer Graphics = CGの中でも、「縦」「横」「奥行き」（x軸、y軸、z軸を使った３次元空間）の３方向が存在する仮想空間内で制作を行うものです。ゲーム、アニメーション、VRなど用途は様々です。\n　3DCGでの制作にはやや大量の作業が必要ですが、高度な表現力を持つクリエイティブな作品を生み出すことができます。部員はBlender、Maya、Zbrush等多種多様なソフトを使用し、日々制作に励んでいます。",
         redirectPath: "/web/artifact/cg3d",
     },
     {
         category: "music",
         backgroundImagePath: "image/background/music.webp",
         caption:
-            "MUSICコミュニティでは、DAWを用いた音楽制作を行っています。一人黙々と楽曲を作ったり、楽曲提供により他のコミュニティと協力して作品を作り上げたりと、さまざまな活動を体験することができます。",
+            "　 MUSICコミュニティでは、DAWを用いた音楽制作を行っています。一人黙々と楽曲を作ったり、楽曲提供により他のコミュニティと協力して作品を作り上げたりと、さまざまな活動を体験することができます。\n　初心者の方は経験者に教わりながら、経験者の方は様々なジャンルの作曲家と触れ合う事でインスピレーションを得ることができるでしょう。",
         redirectPath: "/web/artifact/music",
     },
 ];
