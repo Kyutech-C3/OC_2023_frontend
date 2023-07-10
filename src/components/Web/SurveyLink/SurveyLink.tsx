@@ -9,8 +9,11 @@ export const SurveyLink = () => {
             variant="contained"
             color="secondary"
             sx={{
+                height: "46px",
+                width: "250px",
                 borderRadius: "999px",
                 textShadow: "-0.5px 0.5px 1px white",
+                overflow: "hidden",
                 border: "rgba(255,255,255,0.7) solid",
                 ":before": {
                     content: '""',

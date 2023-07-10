@@ -3,7 +3,6 @@ import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 
 export const C3Outline = () => {
     const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-    const isSmall = useMediaQuery("(min-width:600px)");
 
     return (
         <Box
