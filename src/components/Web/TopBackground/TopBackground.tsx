@@ -1,11 +1,12 @@
 import { imagePaths } from "@/constants/topBackground";
-import { TopBackgroundProps } from "@/types/web";
+import { topHoveringAtom } from "@/state/topHovering";
 import { Box, Stack, useMediaQuery } from "@mui/material";
+import { useRecoilValue } from "recoil";
 
-export const TopBackground = ({ hovering }: TopBackgroundProps) => {
+export const TopBackground = () => {
     const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
     const isSmall = useMediaQuery("(min-width:800px)");
-
+    const { hovering } = useRecoilValue(topHoveringAtom);
     return (
         <Stack
             direction={isSmall ? "column" : "row"}
@@ -14,17 +15,18 @@ export const TopBackground = ({ hovering }: TopBackgroundProps) => {
                 width: "100vw",
                 height: "100vh",
                 overflow: "hidden",
-                backgroundColor: "black",
+                backgroundColor: isDarkMode ? "black" : "white",
                 zIndex: -100,
             }}
         >
             {imagePaths.map(({ department, imagePath }, index) => (
                 <Box
+                    key={department}
                     component="div"
                     sx={{
                         backgroundImage: `url(${imagePath})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
+                        backgroundSize: "center",
+                        backgroundPosition: "bottom",
                         width: isSmall ? "32vw" : "100%",
                         height: isSmall ? "100%" : "32vh",
                         position: "absolute",
@@ -35,7 +37,9 @@ export const TopBackground = ({ hovering }: TopBackgroundProps) => {
                             : "polygon(100% 0%, 100% 50%, 0% 100%, 0% 50%)",
                         animation: `down 0.3s`,
                         animationDuration: `${index * 0.15 + 0.6}s`,
-                        transform: `scale(${hovering == department ? 1.1 : 1})`,
+                        transform: `scale(${
+                            hovering == department ? 1.1 : 1
+                        }) translateZ(0)`,
                         transition: "0.8s transform",
                         "@keyframes down": {
                             "0%": {
@@ -55,10 +59,12 @@ export const TopBackground = ({ hovering }: TopBackgroundProps) => {
                             height: isSmall ? "100vh" : "100%",
                             backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
                                 isDarkMode ? 0 : 255
-                            }, ${isDarkMode ? 0 : 255},0.5)`,
-                            backdropFilter: "blur(3px)",
+                            }, ${isDarkMode ? 0 : 255},${
+                                isDarkMode ? 0.5 : 0.7
+                            })`,
+                            backdropFilter: "blur(2px)",
                         }}
-                    ></Box>
+                    />
                 </Box>
             ))}
         </Stack>
