@@ -78,7 +78,7 @@ export const Artifact = ({
                         <Typography variant="caption">投稿日</Typography>
                         <Stack direction="row">
                             <Box component="div" flexGrow={1} />
-                            <Date dateString={createdAt} />
+                            <Date dateString={createdAt} size="s" />
                         </Stack>
                     </Box>
                     {!isSmall && <Box component="div" sx={{ p: 1, width: "100%", height: "100px", overflow: "auto" }}><WorkTags tags={tags} /></Box>}
