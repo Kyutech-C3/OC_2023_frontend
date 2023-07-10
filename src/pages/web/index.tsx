@@ -1,4 +1,6 @@
+import { Footer } from "@/components/Common/Footer/Footer";
+
 const Web = () => {
-    return <>this is web</>;
+    return <><Footer /></>;
 };
 export default Web;
