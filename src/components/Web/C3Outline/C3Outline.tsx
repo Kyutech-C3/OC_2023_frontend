@@ -13,9 +13,8 @@ export const C3Outline = () => {
                 pl: "7vmin",
                 width: "100%",
                 height: "100vh",
-                backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${
-                    isDarkMode ? 0 : 255
-                }, ${isDarkMode ? 0 : 255},0.85)`,
+                backgroundColor: `rgba(${isDarkMode ? 0 : 255}, ${isDarkMode ? 0 : 255
+                    }, ${isDarkMode ? 0 : 255},0.85)`,
                 backdropFilter: "blur(1px)",
                 color: "text.primary",
             }}
@@ -23,13 +22,11 @@ export const C3Outline = () => {
             <AboutC3 />
             <Typography
                 sx={{
-                    fontSize: isSmall ? "30px" : "3.6vmin",
+                    fontSize: "1.8vmax",
                     p: "4vmin",
-                    textShadow: `2px 2px 4px rgba(${isDarkMode ? 0 : 255}, ${
-                        isDarkMode ? 0 : 255
-                    }, ${isDarkMode ? 0 : 255}, 1), -2px -2px 4px rgba(${
-                        isDarkMode ? 0 : 255
-                    }, ${isDarkMode ? 0 : 255}, ${isDarkMode ? 0 : 255}, 0.25)`,
+                    textShadow: `2px 2px 4px rgba(${isDarkMode ? 0 : 255}, ${isDarkMode ? 0 : 255
+                        }, ${isDarkMode ? 0 : 255}, 1), -2px -2px 4px rgba(${isDarkMode ? 0 : 255
+                        }, ${isDarkMode ? 0 : 255}, ${isDarkMode ? 0 : 255}, 0.25)`,
                     letterSpacing: "0.7vmin",
                     whiteSpace: "pre-wrap",
                 }}
