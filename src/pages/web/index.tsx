@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Common/Footer/Footer";
 import { C3Outline } from "@/components/Web/C3Outline/C3Outline";
 import { CategoryOutlines } from "@/components/Web/CategoryOutlines/CategoryOutlines";
 import { OwnerComment } from "@/components/Web/OwnerComment/OwnerComment";
@@ -47,6 +48,7 @@ const Web = () => {
             <Divider sx={{ backgroundColor: "white" }} />
             <C3Outline />
             <CategoryOutlines />
+            <Footer />
         </Box>
     );
 };

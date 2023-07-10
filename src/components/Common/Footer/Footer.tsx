@@ -18,7 +18,7 @@ export const Footer = () => {
                     width: "100%",
                     backgroundColor: "#FFECAD99",
                     height: "16vh",
-                    p: "4vh",
+                    p: "2vh",
                 }}
             >
                 {isSmall && (
