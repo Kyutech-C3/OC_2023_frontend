@@ -1,6 +1,7 @@
 import Date from "@/components/Common/Date/Date";
 import { TweetButton } from "@/components/Common/TweetButton/TweetButton";
 import { Assets, AssetsModal } from "@/components/Web/Asset/Assets/Assets";
+import { Favorite } from "@/components/Web/Favorite/Favorite";
 import { MarkdownViewer } from "@/components/Web/MarkdownViewer/MarkdownViewer";
 import { UserCard } from "@/components/Web/User/UserCard";
 import { useTopLoading } from "@/hooks/common";
@@ -86,6 +87,8 @@ const ArtifactDetail = () => {
                                 size="small"
                                 text={`${process.env.NEXT_PUBLIC_FRONT_END_URL}${router.asPath}`}
                             />
+                            {/* TODO:バックエンドが変更されたらlikesを渡す */}
+                            <Favorite workId={typeof (artifactId!) == "string" ? artifactId ?? "" : (artifactId ?? [""])[0]} favoriteUsersProps={[""]} />
                         </Stack>
                         {!isSmall && <Box component="div" sx={{ height: "500px", overflow: "auto", opacity: 1, backgroundColor: "white", textAlign: "-webkit-center", borderRadius: "20px" }}>
                             <Assets assets={data?.assets} />
