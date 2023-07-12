@@ -1,9 +1,9 @@
-import { useLocalStorage } from "@/hooks/common";
+import { getUserId } from "@/libs/getUserId";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { Box, IconButton } from "@mui/material";
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { IconButton, Stack, Typography } from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export type FavoriteProps = {
     workId: string;
@@ -11,34 +11,49 @@ export type FavoriteProps = {
 };
 
 export const Favorite = ({ workId, favoriteUsersProps }: FavoriteProps) => {
-    const { getLocalStorage } = useLocalStorage();
     const [favoriteUsers, setFavoriteUsers] =
         useState<string[]>(favoriteUsersProps);
-    const userId = getLocalStorage("userId") ?? uuidv4();
-    // TODO: バックエンドが完成したらリクエストを送るように実装追加
+    const [userId, setUserId] = useState("")
     const handleFavorite = async () => {
+        if (favoriteUsers?.includes(userId)) {
+            deleteLike(userId, workId)
+        } else {
+            postLike(userId, workId)
+        }
+    };
+    const postLike = async (userId: string, workId: string) => {
         try {
-            // const response = await axios.post("url", { userId, workId });
-            // if (response.status == 200) {
-            if (favoriteUsers.includes(userId)) {
+            const response = await axios.post(process.env.NEXT_PUBLIC_BACKEND_API! + "/api/v1/likes", { "user_id": userId, "work_id": workId });
+            if (response.status == 200) {
+                setFavoriteUsers([...favoriteUsers, userId]);
+            } else {
+                console.log(response.statusText);
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    const deleteLike = async (userId: string, workId: string) => {
+        try {
+            const response = await axios.delete(process.env.NEXT_PUBLIC_BACKEND_API! + "/api/v1/likes", { data: { "user_id": userId, "work_id": workId } });
+            if (response.status == 200) {
                 setFavoriteUsers((_favoriteUser) =>
                     _favoriteUser.filter((user) => user != userId)
                 );
             } else {
-                setFavoriteUsers([...favoriteUsers, userId]);
+                console.log(response.statusText);
             }
-            // } else {
-            //     console.log(response.statusText);
-            // }
         } catch (e) {
             console.log(e);
         }
-    };
+    }
+    useEffect(() => {
+        setUserId(getUserId())
+    }, [])
     return (
-        <Box component="div" sx={{ height: "40px" }}>
+        <Stack direction="row" sx={{ height: "40px", margin: "auto", alignItems: "center" }}>
             <IconButton onClick={() => handleFavorite()}>
-                {favoriteUsers.includes(userId) ? (
-                    // {favoriteUsers.includes(userId) && (
+                {favoriteUsers?.includes(userId) ? (
                     <FavoriteIcon
                         sx={{
                             scale: 10,
@@ -82,6 +97,7 @@ export const Favorite = ({ workId, favoriteUsersProps }: FavoriteProps) => {
                     />
                 )}
             </IconButton>
-        </Box>
+            <Typography variant="body1">{favoriteUsers?.length}</Typography>
+        </Stack>
     );
 };

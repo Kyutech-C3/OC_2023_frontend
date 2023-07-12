@@ -3,6 +3,7 @@ import { TweetButton } from "@/components/Common/TweetButton/TweetButton";
 import { Assets, AssetsModal } from "@/components/Web/Asset/Assets/Assets";
 import { Comments } from "@/components/Web/Comments/Comments";
 import { CreateComment } from "@/components/Web/CreateComment/CreateComment";
+import { Favorite } from "@/components/Web/Favorite/Favorite";
 import { MarkdownViewer } from "@/components/Web/MarkdownViewer/MarkdownViewer";
 import { UserCard } from "@/components/Web/User/UserCard";
 import { useTopLoading } from "@/hooks/common";
@@ -32,6 +33,9 @@ const ArtifactDetail = () => {
         fetcher
     );
     useTopLoading({ isLoading: isLoading, message: "読み込み中" });
+    if (isLoading) {
+        return <></>;
+    }
     return (
         <Box
             component="div"
@@ -120,7 +124,6 @@ const ArtifactDetail = () => {
                     <Stack spacing={2}>
                         <Stack
                             alignSelf="end"
-                            paddingX={10}
                             paddingTop={3}
                             direction="row"
                             spacing={3}
@@ -151,6 +154,14 @@ const ArtifactDetail = () => {
                                     コメントを見る
                                 </Button>
                             )}
+                            <Favorite
+                                workId={
+                                    typeof artifactId! == "string"
+                                        ? artifactId ?? ""
+                                        : (artifactId ?? [""])[0]
+                                }
+                                favoriteUsersProps={data?.likes}
+                            />
                         </Stack>
                         {!isSmall && (
                             <Box
