@@ -37,3 +37,17 @@ export const castCategory = (raw: string) => {
     }
     return "primary";
 };
+export const castCategoryName = (raw: string) => {
+    if (raw == "hack" || raw == "Hack") {
+        return "hack";
+    } else if (raw == "game") {
+        return "game";
+    } else if (raw == "cg2d") {
+        return "2dcg";
+    } else if (raw == "cg3d") {
+        return "3dcg";
+    } else if (raw == "music") {
+        return "music";
+    }
+    return "primary";
+};

@@ -16,7 +16,10 @@ const Artifacts = () => {
     useTopLoading({ isLoading, message: "getting" });
     useEffect(() => {
         const { selectedDepartment } = router.query;
-        refetch(`&tag_names=${selectedDepartment}`, true);
+        refetch(
+            `&tag_names=${selectedDepartment?.toString().toUpperCase()}`,
+            true
+        );
     }, [router.query]);
     return (
         <Box component="div">
