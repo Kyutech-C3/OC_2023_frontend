@@ -74,3 +74,9 @@ export type TopBackgroundProps =
     | "3dcg"
     | "music"
     | "";
+
+export type ModalProps = {
+    isOpen: boolean;
+    closeModal: () => void;
+    handleConfirm: () => void;
+};
