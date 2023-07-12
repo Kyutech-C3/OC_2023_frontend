@@ -1,7 +1,7 @@
 import { getUserId } from "@/libs/getUserId";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { Box, IconButton, Stack, Typography } from "@mui/material";
+import { IconButton, Stack, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -49,7 +49,6 @@ export const Favorite = ({ workId, favoriteUsersProps }: FavoriteProps) => {
     }
     useEffect(() => {
         setUserId(getUserId())
-
     }, [])
     return (
         <Stack direction="row" sx={{ height: "40px", margin: "auto", alignItems: "center" }}>
@@ -98,7 +97,7 @@ export const Favorite = ({ workId, favoriteUsersProps }: FavoriteProps) => {
                     />
                 )}
             </IconButton>
-            <Typography variant="body1">{favoriteUsers.length}</Typography>
+            <Typography variant="body1">{favoriteUsers?.length}</Typography>
         </Stack>
     );
 };

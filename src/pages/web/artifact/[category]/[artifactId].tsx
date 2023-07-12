@@ -22,6 +22,9 @@ const ArtifactDetail = () => {
         fetcher
     );
     useTopLoading({ isLoading: isLoading, message: "読み込み中" });
+    if (isLoading) {
+        return <></>
+    }
     return (
         <Box
             component="div"
@@ -87,8 +90,7 @@ const ArtifactDetail = () => {
                                 size="small"
                                 text={`${process.env.NEXT_PUBLIC_FRONT_END_URL}${router.asPath}`}
                             />
-                            {/* TODO:バックエンドが変更されたらlikesを渡す */}
-                            <Favorite workId={typeof (artifactId!) == "string" ? artifactId ?? "" : (artifactId ?? [""])[0]} favoriteUsersProps={[""]} />
+                            <Favorite workId={typeof (artifactId!) == "string" ? artifactId ?? "" : (artifactId ?? [""])[0]} favoriteUsersProps={data?.likes} />
                         </Stack>
                         {!isSmall && <Box component="div" sx={{ height: "500px", overflow: "auto", opacity: 1, backgroundColor: "white", textAlign: "-webkit-center", borderRadius: "20px" }}>
                             <Assets assets={data?.assets} />
