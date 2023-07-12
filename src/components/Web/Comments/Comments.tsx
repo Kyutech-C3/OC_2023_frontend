@@ -3,6 +3,7 @@ import { getUserId } from "@/libs/getUserId";
 import { Comment } from "@/types/common";
 import { Delete } from "@mui/icons-material";
 import {
+    Box,
     Divider,
     IconButton,
     List,
@@ -10,7 +11,9 @@ import {
     Stack,
     Typography
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import axios from "axios";
+import React, { SetStateAction, useEffect, useState } from "react";
+import { ConfirmModal } from "../ConfirmModal/ConfirmModal";
 
 const CommentOne = ({
     user_id,
@@ -20,7 +23,11 @@ const CommentOne = ({
     comment_id,
     created_at,
     localUserId,
-}: Comment & { localUserId: string }) => {
+    setDeleteCommentId,
+}: Comment & {
+    localUserId: string;
+    setDeleteCommentId: React.Dispatch<SetStateAction<string>>;
+}) => {
     return (
         <Stack
             spacing={2}
@@ -32,20 +39,29 @@ const CommentOne = ({
                 width: "300px",
             }}
         >
-            <Stack direction="row" spacing={1} alignItems="center" sx={{ height: "20px" }}>
+            <Stack
+                direction="row"
+                spacing={1}
+                alignItems="center"
+                sx={{ height: "20px" }}
+            >
                 <Typography variant="body1" flexGrow={1}>
                     {user_name}さん
                 </Typography>
                 {localUserId == user_id && (
-                    <IconButton>
+                    <IconButton onClick={() => setDeleteCommentId(comment_id)}>
                         <Delete />
                     </IconButton>
                 )}
                 <Date dateString={created_at} size="s" />
             </Stack>
-            <Typography variant="body1" sx={{
-                pl: "2vw", whiteSpace: "pre-wrap",
-            }}>
+            <Typography
+                variant="body1"
+                sx={{
+                    pl: "2vw",
+                    whiteSpace: "pre-wrap",
+                }}
+            >
                 {comment}
             </Typography>
         </Stack>
@@ -54,20 +70,43 @@ const CommentOne = ({
 
 export const Comments = ({ comments }: { comments: Comment[] }) => {
     const [userId, setUserId] = useState("");
+    const [deleteCommentId, setDeleteCommentId] = useState("");
     useEffect(() => {
         setUserId(getUserId());
     }, []);
+    const handleDeleteComment = async () => {
+        try {
+            console.log(deleteCommentId, userId)
+            await axios.delete(
+                process.env.NEXT_PUBLIC_BACKEND_API! + "/api/v1/comments",
+                { data: { user_id: userId, comment_id: deleteCommentId } }
+            );
+            setDeleteCommentId("")
+        } catch (err) {
+            console.log(err);
+            setDeleteCommentId("")
+
+        }
+    };
     return (
-        <List>
-            {comments.map((comment: Comment) => (
-                <ListItem key={comment.comment_id}>
-                    <CommentOne
-                        {...comment}
-                        localUserId={"8bf9b5c1-3201-4b56-ba42-8f90880b69e4"}
-                    />
-                    <Divider />
-                </ListItem>
-            ))}
-        </List>
+        <Box component="div">
+            <ConfirmModal
+                handleConfirm={handleDeleteComment}
+                closeModal={() => setDeleteCommentId("")}
+                isOpen={deleteCommentId !== ""}
+            />
+            <List>
+                {comments?.map((comment: Comment) => (
+                    <ListItem key={comment.comment_id}>
+                        <CommentOne
+                            {...comment}
+                            localUserId={userId}
+                            setDeleteCommentId={setDeleteCommentId}
+                        />
+                        <Divider />
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
     );
 };

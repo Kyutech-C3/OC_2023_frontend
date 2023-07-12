@@ -1,6 +1,8 @@
 import Date from "@/components/Common/Date/Date";
 import { TweetButton } from "@/components/Common/TweetButton/TweetButton";
 import { Assets, AssetsModal } from "@/components/Web/Asset/Assets/Assets";
+import { Comments } from "@/components/Web/Comments/Comments";
+import { CreateComment } from "@/components/Web/CreateComment/CreateComment";
 import { MarkdownViewer } from "@/components/Web/MarkdownViewer/MarkdownViewer";
 import { UserCard } from "@/components/Web/User/UserCard";
 import { useTopLoading } from "@/hooks/common";
@@ -13,7 +15,8 @@ const ArtifactDetail = () => {
     const router = useRouter();
     const isSmall = useMediaQuery("(min-width:800px)");
 
-    const { artifactId, category } = router.query;
+    const { category } = router.query;
+    const artifactId = router.query.artifactId?.toString() || ""
     const [isOpen, setIsOpen] = useState(true);
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data, isLoading } = useSWR(
@@ -96,6 +99,7 @@ const ArtifactDetail = () => {
                             sx={{ height: "80vh", backgroundColor: isSmall ? "" : `${category}.light`, borderRadius: isSmall ? "" : "20px", p: isSmall ? "" : 3 }}
                             color={`${category}.contrastText`}
                         >
+
                             <Stack
                                 direction="row"
                                 sx={{ alignItems: "center" }}
@@ -114,6 +118,8 @@ const ArtifactDetail = () => {
                                 </Typography>
                                 <Date dateString={data?.created_at ?? ""} size="l" />
                             </Stack>
+                            <Comments comments={data?.comments} />
+                            <CreateComment workId={typeof artifactId !== "string" ? artifactId![0] : artifactId!} />
                             <Typography
                                 variant="h5"
                                 pl={isSmall ? 22 : 0}
@@ -130,6 +136,7 @@ const ArtifactDetail = () => {
                             >
                                 <MarkdownViewer rawText={data?.description} />
                             </Box>
+
                         </Stack>
                     </Stack>
                 </Box>
