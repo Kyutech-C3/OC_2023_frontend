@@ -9,7 +9,7 @@ import {
     List,
     ListItem,
     Stack,
-    Typography
+    Typography,
 } from "@mui/material";
 import axios from "axios";
 import React, { SetStateAction, useEffect, useState } from "react";
@@ -33,10 +33,12 @@ const CommentOne = ({
             spacing={2}
             sx={{
                 border: "2px solid",
-                borderColor: "secondary.main",
+                borderColor: "primary.light",
                 borderRadius: "10px",
                 p: 2,
                 width: "300px",
+                backgroundColor: "primary.dark",
+                color: "primary.contrastText",
             }}
         >
             <Stack
@@ -76,20 +78,24 @@ export const Comments = ({ comments }: { comments: Comment[] }) => {
     }, []);
     const handleDeleteComment = async () => {
         try {
-            console.log(deleteCommentId, userId)
             await axios.delete(
                 process.env.NEXT_PUBLIC_BACKEND_API! + "/api/v1/comments",
                 { data: { user_id: userId, comment_id: deleteCommentId } }
             );
-            setDeleteCommentId("")
+            setDeleteCommentId("");
         } catch (err) {
             console.log(err);
-            setDeleteCommentId("")
-
+            setDeleteCommentId("");
         }
     };
     return (
-        <Box component="div">
+        <Box
+            component="div"
+            sx={{
+                backgroundColor: "primary.main",
+                borderRadius: "10px",
+            }}
+        >
             <ConfirmModal
                 handleConfirm={handleDeleteComment}
                 closeModal={() => setDeleteCommentId("")}
