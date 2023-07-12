@@ -124,7 +124,6 @@ const ArtifactDetail = () => {
                     <Stack spacing={2}>
                         <Stack
                             alignSelf="end"
-                            paddingX={10}
                             paddingTop={3}
                             direction="row"
                             spacing={3}
