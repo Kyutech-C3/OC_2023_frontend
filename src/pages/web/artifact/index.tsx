@@ -55,11 +55,16 @@ const Artifacts = () => {
                 hasMore={isContinue}
             >
                 <Grid container justifyContent={"center"} spacing={3}>
-                    {works?.map((artifact: Work, index: number) => (
-                        <Grid item key={index}>
-                            <Artifact {...artifact} />
-                        </Grid>
-                    ))}
+                    {works?.map(
+                        (
+                            artifact: Work & { likes: string[] },
+                            index: number
+                        ) => (
+                            <Grid item key={index}>
+                                <Artifact {...artifact} />
+                            </Grid>
+                        )
+                    )}
                 </Grid>
             </InfiniteScroll>
         </Box>

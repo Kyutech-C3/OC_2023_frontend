@@ -101,18 +101,22 @@ export const Comments = ({ comments }: { comments: Comment[] }) => {
                 closeModal={() => setDeleteCommentId("")}
                 isOpen={deleteCommentId !== ""}
             />
-            <List>
-                {comments?.map((comment: Comment) => (
-                    <ListItem key={comment.comment_id}>
-                        <CommentOne
-                            {...comment}
-                            localUserId={userId}
-                            setDeleteCommentId={setDeleteCommentId}
-                        />
-                        <Divider />
-                    </ListItem>
-                ))}
-            </List>
+            {comments?.length != 0 ? (
+                <List>
+                    {comments?.map((comment: Comment) => (
+                        <ListItem key={comment.comment_id}>
+                            <CommentOne
+                                {...comment}
+                                localUserId={userId}
+                                setDeleteCommentId={setDeleteCommentId}
+                            />
+                            <Divider />
+                        </ListItem>
+                    ))}
+                </List>
+            ) : (
+                <Typography p={2}>まだコメントがないよ</Typography>
+            )}
         </Box>
     );
 };
