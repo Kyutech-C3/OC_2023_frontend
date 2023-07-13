@@ -19,5 +19,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         </RecoilRoot>
     );
 }
+MyApp.getInitialProps = async () => ({ pageProps: {} });
 
 export default MyApp;

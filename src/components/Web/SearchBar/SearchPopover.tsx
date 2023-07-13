@@ -6,8 +6,8 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { CategorySelect } from "./CategorySelect";
-import { SuggestTags } from "./SuggestTags";
 import { SelectedTags } from "./SelectedTags";
+import { SuggestTags } from "./SuggestTags";
 
 export const SearchPopover = ({
     isOpen,
@@ -60,12 +60,14 @@ export const SearchPopover = ({
         }
         setSelectedDepartment(newLabel);
         const labelsQuery = newLabel.join(",");
-        router.replace({ query: { selectedDepartment: labelsQuery } });
+        router.replace({
+            query: { ...router.query, selectedDepartment: labelsQuery },
+        });
     };
     const getTagSuggest = async () => {
         try {
             const response = await axios.get(
-                `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/tags?w=${tagInput}`
+                `${process.env.NEXT_PUBLIC_BACKEND_TAG_API}/api/v1/tags?w=${tagInput}`
             );
             setTagSuggest(response.data);
         } catch (err) {
@@ -76,6 +78,14 @@ export const SearchPopover = ({
     useEffect(() => {
         getTagSuggest();
     }, [debouncedKeyword]);
+    useEffect(() => {
+        router.replace({
+            query: {
+                ...router.query,
+                tags: searchTag.map((tag) => tag.name),
+            },
+        });
+    }, [searchTag]);
     return (
         <Popover
             open={isOpen}
