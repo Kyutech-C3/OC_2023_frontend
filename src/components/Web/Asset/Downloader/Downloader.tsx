@@ -1,5 +1,6 @@
 import { Asset } from "@/types/common";
 import { Box, Button } from "@mui/material";
+import Image from "next/image";
 
 export const Downloader = ({ url }: Asset) => {
     return (
@@ -14,6 +15,18 @@ export const Downloader = ({ url }: Asset) => {
                     marginTop: "150px",
                 }}
             >
+                <Image
+                    src="/image/illust/clickGirl.png"
+                    width={150}
+                    height={150}
+                    style={{
+                        zIndex: 10000,
+                        position: "absolute",
+                        bottom: 60,
+                        right: 0,
+                    }}
+                    alt="clickGirl"
+                />
                 <Box
                     component="div"
                     sx={{

@@ -1,11 +1,19 @@
 import Date from "@/components/Common/Date/Date";
 import { getCategory } from "@/libs/getCategory";
 import { Work } from "@/types/common";
-import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
-import Image from "next/image";
+import {
+    Box,
+    Button,
+    Card,
+    CardContent,
+    CardMedia,
+    Stack,
+    Typography,
+    useMediaQuery,
+} from "@mui/material";
+import { Favorite } from "../Favorite/Favorite";
 import { WorkTags } from "../Tags/WorkTags";
 import { UserCard } from "../User/UserCard";
-
 export const Artifact = ({
     id,
     title,
@@ -13,77 +21,75 @@ export const Artifact = ({
     created_at: createdAt,
     tags,
     thumbnail,
-}: Pick<
-    Work,
-    "id" | "title" | "user" | "created_at" | "tags" | "thumbnail"
->) => {
+    likes,
+}: Pick<Work, "id" | "title" | "user" | "created_at" | "tags" | "thumbnail"> & {
+    likes: string[];
+}) => {
     const category = getCategory(tags);
     const isSmall = useMediaQuery("(min-width:600px)");
     return (
-        <Button
-            sx={{
-                border: "2px solid",
-                height: isSmall ? "35vh" : "45vh",
-                width: isSmall ? "30vw" : "60vw",
-                borderRadius: "10px",
-            }}
-            variant="contained"
-            href={`/web/artifact/${category}/${id}`}
-            color={category}
-        >
-            <Stack direction={isSmall ? "row" : "column"} spacing={2}>
-                <Stack
-                    sx={{ width: isSmall ? "15vw" : "40vw" }}
-                    alignSelf={"center"}
+        <Box component="div" sx={{ position: "relative" }}>
+            <Box
+                component="div"
+                sx={{ position: "absolute", right: 12, zIndex: 1000 }}
+            >
+                <Favorite workId={id} favoriteUsersProps={likes} />
+            </Box>
+
+            <Button href={`/web/artifact/${category}/${id}`}>
+                <Card
+                    sx={{
+                        display: isSmall ? "flex" : "",
+                        width: isSmall ? "400px" : "300px",
+                        height: isSmall ? "300px" : "400px",
+                        border: "2px solid",
+                        borderColor: `${category}.dark`,
+                    }}
                 >
-                    <Box
-                        component="div"
+                    <CardMedia
+                        component="img"
                         sx={{
-                            width: "100%",
-                            position: "relative",
-                            height: isSmall ? "15vh" : "15vh",
+                            width: isSmall ? "200px" : "300px",
+                            height: isSmall ? "300px" : "200px",
+                        }}
+                        image={thumbnail.url}
+                    />
+                    <CardContent
+                        sx={{
+                            width: isSmall ? "200px" : "300px",
+                            backgroundColor: `${category}.main`,
                         }}
                     >
-                        <Image
-                            src={thumbnail.url}
-                            layout="fill"
-                            objectFit="contain"
-                            alt={thumbnail.url}
-                        />
-                    </Box>
-                    {isSmall && <Box component="div" sx={{ p: 1, width: "200px", height: "100px", overflow: "auto" }}><WorkTags tags={tags} /></Box>}
-                </Stack>
-                <Stack spacing={1} sx={{ width: isSmall ? "10vw" : "30vw" }}>
-                    <Box component="div">
-                        <Typography variant="body2">タイトル</Typography>
-                        <Typography variant="body2" textAlign="end">
-                            {title.length > 10
-                                ? title.substring(0, 10) + "..."
-                                : title}
-                        </Typography>
-                    </Box>
-                    <Box component="div">
-                        <Typography
-                            variant="body2"
-                            sx={{ alignSelf: "center" }}
-                        >
-                            製作者
-                        </Typography>
-                        <Stack direction="row">
-                            <Box component="div" flexGrow={1} />
-                            <UserCard {...user} size="small" />
+                        <Stack spacing={2}>
+                            <Typography
+                                sx={{
+                                    textOverflow: "ellipsis",
+                                    whiteSpace: "nowrap",
+                                    overflow: "hidden",
+                                }}
+                            >
+                                {title}
+                            </Typography>
+
+                            <UserCard
+                                display_name={user.display_name}
+                                avatar_url={user.avatar_url}
+                                size="small"
+                            />
+                            <Stack direction="row">
+                                <Typography>投稿日</Typography>:
+                                <Date dateString={createdAt} size="s" />
+                            </Stack>
+                            <Box
+                                component="div"
+                                sx={{ overflow: "scroll", height: "200px" }}
+                            >
+                                <WorkTags tags={tags} />
+                            </Box>
                         </Stack>
-                    </Box>
-                    <Box component="div">
-                        <Typography variant="caption">投稿日</Typography>
-                        <Stack direction="row">
-                            <Box component="div" flexGrow={1} />
-                            <Date dateString={createdAt} size="s" />
-                        </Stack>
-                    </Box>
-                    {!isSmall && <Box component="div" sx={{ p: 1, width: "100%", height: "100px", overflow: "auto" }}><WorkTags tags={tags} /></Box>}
-                </Stack>
-            </Stack>
-        </Button >
+                    </CardContent>
+                </Card>
+            </Button>
+        </Box>
     );
 };

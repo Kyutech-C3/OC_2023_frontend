@@ -23,13 +23,8 @@ export const SideBar = () => {
             sx={{
                 position: isTop ? "fixed" : "absolute",
                 zIndex: 100,
-                top: isTop
-                    ? isSmall
-                        ? "20%"
-                        : "30%"
-                    : isSmall
-                    ? "120vh"
-                    : "130vh",
+                top: isTop ? "50%" : "150vh",
+                transform: "translateY(-50%)",
             }}
         >
             <Stack>
