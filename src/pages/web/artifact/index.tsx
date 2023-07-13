@@ -4,7 +4,7 @@ import { useTopLoading } from "@/hooks/common";
 import { useGetWorks } from "@/hooks/web";
 import { combineStrings } from "@/libs/combineArray";
 import { Work } from "@/types/common";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroller";
@@ -15,6 +15,8 @@ const Artifacts = () => {
         `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works`,
         { tag_names: "OC2023" }
     );
+    const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
     useTopLoading({ isLoading, message: "getting" });
     useEffect(() => {
         const { selectedDepartment, tags, searchWord } = router.query;
@@ -30,7 +32,13 @@ const Artifacts = () => {
         );
     }, [router.query]);
     return (
-        <Box component="div">
+        <Box
+            component="div"
+            sx={{
+                backgroundColor: isDarkMode ? "black" : "white",
+                minHeight: "100vh",
+            }}
+        >
             <SearchBar />
             <InfiniteScroll
                 loadMore={() => {

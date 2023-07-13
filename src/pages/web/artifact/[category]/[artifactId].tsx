@@ -40,11 +40,12 @@ const ArtifactDetail = () => {
         <Box
             component="div"
             sx={{
-                width: "100vw",
+                width: "100%",
                 height: isSmall ? "100vh" : "100%",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundImage: `url(${data?.thumbnail?.url})`,
+                overflow: "none",
             }}
         >
             <Slide in={commentIsOpen} direction="right">
