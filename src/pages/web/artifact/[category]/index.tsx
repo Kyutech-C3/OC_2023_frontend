@@ -3,7 +3,7 @@ import { useTopLoading } from "@/hooks/common";
 import { useGetWorks } from "@/hooks/web";
 import { castCategoryName } from "@/libs/getCategory";
 import { Work } from "@/types/common";
-import { Box, Grid } from "@mui/material";
+import { Box, Button, ButtonTypeMap, Grid } from "@mui/material";
 import { useRouter } from "next/router";
 import InfiniteScroll from "react-infinite-scroller";
 
@@ -32,7 +32,25 @@ const CategoryTop = () => {
         return <></>;
     }
     return (
-        <Box component="div" sx={{}}>
+        <Box component="div">
+            <Button
+                onClick={() => router.back()}
+                sx={{
+                    position: "absolute",
+                    top: "1%",
+                    left: "5%",
+                    borderRadius: "999px",
+                }}
+                color={
+                    category as Extract<
+                        ButtonTypeMap["props"]["color"],
+                        "hack" | "game" | "cg2d" | "cg3d" | "music" | "primary"
+                    >
+                }
+                variant="contained"
+            >
+                戻る
+            </Button>
             <Box
                 component="div"
                 sx={{
