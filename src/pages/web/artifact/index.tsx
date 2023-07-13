@@ -2,6 +2,7 @@ import { Artifact } from "@/components/Web/Artifact/Artifact";
 import { SearchBar } from "@/components/Web/SearchBar/SearchBar";
 import { useTopLoading } from "@/hooks/common";
 import { useGetWorks } from "@/hooks/web";
+import { combineStrings } from "@/libs/combineArray";
 import { Work } from "@/types/common";
 import { Box, Grid } from "@mui/material";
 import { useRouter } from "next/router";
@@ -11,12 +12,22 @@ import InfiniteScroll from "react-infinite-scroller";
 const Artifacts = () => {
     const router = useRouter();
     const { works, refetch, isLoading, isContinue } = useGetWorks(
-        `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works`
+        `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works`,
+        { tag_names: "OC2023" }
     );
     useTopLoading({ isLoading, message: "getting" });
     useEffect(() => {
-        const { selectedDepartment } = router.query;
-        refetch(`&tag_names=${selectedDepartment}`, true);
+        const { selectedDepartment, tags, searchWord } = router.query;
+        refetch(
+            {
+                tag_names: [
+                    ...combineStrings(selectedDepartment, tags),
+                    "OC2023",
+                ].join(","),
+                search_word: searchWord,
+            },
+            true
+        );
     }, [router.query]);
     return (
         <Box component="div">
@@ -25,7 +36,10 @@ const Artifacts = () => {
                 loadMore={() => {
                     if (works.length != 0) {
                         refetch(
-                            `newest_work_id=${works[works.length - 1].id}`,
+                            {
+                                tag_names: "OC2023",
+                                newest_work_id: works[works.length - 1].id,
+                            },
                             false
                         );
                     }
