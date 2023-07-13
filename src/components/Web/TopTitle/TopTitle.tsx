@@ -1,30 +1,35 @@
-import { Box, Stack, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Box, Stack, Typography } from "@mui/material";
 
 export const TopTitle = () => {
     return (
-        <Stack spacing={3}>
+        <Stack
+            spacing={3}
+            sx={{
+                color: "text.primary",
+                opacity: "0.7",
+            }}
+        >
             <Box component="div">
-                <Typography fontWeight="bold" variant="h3">
+                <Typography fontWeight="bold" sx={{ fontSize: "5vmax" }}>
                     C3 Open Campus 2023
                 </Typography>
             </Box>
             <Stack sx={{ pl: 3 }} spacing={1} direction="row">
-                <Typography fontWeight="bold" variant="h3">
+                <Typography fontWeight="bold" sx={{ fontSize: "5vmax" }}>
                     July
                 </Typography>
                 <Stack direction="row">
                     <Typography
                         letterSpacing={-3}
                         fontWeight="bold"
-                        variant="h3"
-                        sx={{ pr: 0.5 }}
+                        sx={{ pr: 0.5, fontSize: "5vmax" }}
                     >
                         15
                     </Typography>
                     <Typography
-                        variant="h5"
                         sx={{
+                            fontSize: "1.6vmax",
                             textOrientation: "mixed",
                             writingMode: "vertical-lr",
                             textAlign: "center",
@@ -42,14 +47,13 @@ export const TopTitle = () => {
                     <Typography
                         letterSpacing={-3}
                         fontWeight="bold"
-                        variant="h3"
-                        sx={{ pr: 0.5 }}
+                        sx={{ pr: 0.5, fontSize: "5vmax" }}
                     >
                         16
                     </Typography>
                     <Typography
-                        variant="h5"
                         sx={{
+                            fontSize: "1.6vmax",
                             textOrientation: "mixed",
                             writingMode: "vertical-lr",
                             textAlign: "center",

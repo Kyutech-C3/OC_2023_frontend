@@ -84,6 +84,5 @@ export const Template: StoryObj<typeof Assets> = {
                 },
             },
         ],
-        isOpen: false,
     },
 };

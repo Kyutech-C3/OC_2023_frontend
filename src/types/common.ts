@@ -181,3 +181,16 @@ export type Work = {
     created_at: string;
     updated_at: string;
 };
+export type DateProps = {
+    dateString: string;
+    size: "s" | "m" | "l";
+};
+
+export type Comment = {
+    comment_id: string;
+    user_name: string;
+    user_id: string;
+    work_id: string;
+    comment: string;
+    created_at: string;
+};

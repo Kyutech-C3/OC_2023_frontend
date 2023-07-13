@@ -8,17 +8,46 @@ export const getCategory = (
     "hack" | "game" | "cg2d" | "cg3d" | "music" | "primary"
 > => {
     for (const tag of tags) {
-        if (tag.name == "hack" || tag.name == "Hack") {
+        if (tag.name.toLowerCase() == "hack") {
             return "hack";
-        } else if (tag.name == "game") {
+        } else if (tag.name.toLowerCase() == "game") {
             return "game";
-        } else if (tag.name == "cg2d") {
+        } else if (tag.name.toLowerCase() == "2dcg") {
             return "cg2d";
-        } else if (tag.name == "cg3d") {
+        } else if (tag.name.toLowerCase() == "3dcg") {
             return "cg3d";
-        } else if (tag.name == "music") {
+        } else if (tag.name.toLowerCase() == "music") {
             return "music";
         }
+    }
+    return "primary";
+};
+
+export const castCategory = (raw: string) => {
+    if (raw == "hack" || raw == "Hack") {
+        return "hack";
+    } else if (raw == "game") {
+        return "game";
+    } else if (raw == "2dcg") {
+        return "cg2d";
+    } else if (raw == "3dcg") {
+        return "cg3d";
+    } else if (raw == "music") {
+        return "music";
+    }
+    return "primary";
+};
+export const castCategoryName = (raw: string) => {
+    if (raw == "hack" || raw == "Hack") {
+        return "hack";
+    } else if (raw == "game") {
+        return "game";
+    } else if (raw == "cg2d") {
+        return "2dcg";
+    } else if (raw == "cg3d") {
+        return "3dcg";
+    } else if (raw == "music") {
+        return "music";
     }
     return "primary";
 };

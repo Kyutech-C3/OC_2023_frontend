@@ -7,11 +7,11 @@ const size2int = {
     large: 38,
 };
 const size2captionSize: Record<string, TypographyTypeMap["props"]["variant"]> =
-    {
-        small: "h6",
-        medium: "h5",
-        large: "h4",
-    };
+{
+    small: "h6",
+    medium: "h5",
+    large: "h4",
+};
 export const TweetButton = ({ size, text }: TweetButtonProps) => {
     return (
         <Button
@@ -23,7 +23,7 @@ export const TweetButton = ({ size, text }: TweetButtonProps) => {
                 ":hover": {
                     backgroundColor: "#28ABFB",
                 },
-                width: "200px",
+                width: size == "small" ? "200px" : size == "medium" ? "250px" : "300px",
             }}
             href={`http://twitter.com/intent/tweet?hashtags=C3OpenCanpas2023&text=${text}`}
         >
