@@ -12,6 +12,7 @@ import { TopBackground } from "@/components/Web/TopBackground/TopBackground";
 import { TopScroll } from "@/components/Web/TopScroll/TopScroll";
 import { TopTitle } from "@/components/Web/TopTitle/TopTitle";
 import { C3 } from "@/constants/C3";
+import { Girl } from "@/constants/girl";
 import { Box, Divider, Grid, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { Link as Scroll } from "react-scroll";
@@ -44,6 +45,7 @@ const Web = () => {
                     }
                 }`}
             </style>
+            <Girl />
             <Scroll
                 to="top"
                 smooth={true}
