@@ -37,7 +37,6 @@ export const useGetWorks = (url: string, queryParam: object) => {
         fetchData(url, queryParam, false);
     }, [url]);
     const refetch = (_queryParam: object, replace: boolean) => {
-        console.log(_queryParam);
         fetchData(url, _queryParam, replace);
     };
 
