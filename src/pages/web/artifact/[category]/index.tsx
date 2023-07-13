@@ -23,13 +23,9 @@ const CategoryTop = () => {
             router.push("/web/artifact");
         }
     }
-    console.log(
-        castCategoryName(
-            typeof category == "string" ? category : category![0]
-        ).toUpperCase()
-    );
     const { works, refetch, isLoading, isContinue } = useGetWorks(
-        `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works?tag_names=OC2023`
+        `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works`,
+        "?tag_names=OC2023"
     );
     useTopLoading({ isLoading, message: "getting" });
     if (isLoading) {

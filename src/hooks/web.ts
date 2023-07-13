@@ -3,15 +3,14 @@ import { DebounceExecuteProps } from "@/types/web";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const useGetWorks = (url: string) => {
+export const useGetWorks = (url: string, query: string) => {
     const [works, setWorks] = useState<Work[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isContinue, setIsContinue] = useState(true);
-
-    const fetchData = async (url: string, replace: boolean) => {
+    const fetchData = async (url: string, query: string, replace: boolean) => {
         setIsLoading(true);
         try {
-            const { works: newWorks } = (await axios.get(url)).data;
+            const { works: newWorks } = (await axios.get(url + query)).data;
             if (newWorks.length < 30) {
                 setIsContinue(false);
             } else {
@@ -29,10 +28,10 @@ export const useGetWorks = (url: string) => {
     };
 
     useEffect(() => {
-        fetchData(url, false);
+        fetchData(url, query, false);
     }, [url]);
-    const refetch = (query: string, replace: boolean) => {
-        fetchData(`${url}?${query}`, replace);
+    const refetch = (_query: string, replace: boolean) => {
+        fetchData(url, _query, replace);
     };
 
     return { works, isLoading, isContinue, refetch };
