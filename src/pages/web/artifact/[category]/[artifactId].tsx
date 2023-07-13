@@ -11,6 +11,7 @@ import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import {
     Box,
     Button,
+    Grid,
     Slide,
     Stack,
     Typography,
@@ -41,7 +42,7 @@ const ArtifactDetail = () => {
             component="div"
             sx={{
                 width: "100%",
-                height: isSmall ? "100vh" : "100%",
+                height: isSmall ? "100vh" : "",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundImage: `url(${data?.thumbnail?.url})`,
@@ -53,9 +54,9 @@ const ArtifactDetail = () => {
                     spacing={1}
                     sx={{
                         pr: "3vw",
-                        width: isSmall ? "60vw" : "100vw",
+                        width: "60vw",
                         position: "absolute",
-                        height: "100vh",
+                        height: "100%",
                         right: 0,
                         zIndex: 1000,
                         clipPath: isSmall
@@ -89,7 +90,7 @@ const ArtifactDetail = () => {
                 <Button
                     sx={{
                         width: "60vw",
-                        height: "100vh",
+                        height: "100%",
                         zIndex: 100,
                         backgroundColor: "transparent",
                         position: "absolute",
@@ -107,7 +108,7 @@ const ArtifactDetail = () => {
                 />
             )}
 
-            <Slide in={isOpen && !commentIsOpen} direction="left">
+            <Slide in={isOpen && !commentIsOpen} direction="right">
                 <Box
                     component="div"
                     sx={{
@@ -115,6 +116,7 @@ const ArtifactDetail = () => {
                         width: isSmall ? "60vw" : "100vw",
                         position: "absolute",
                         right: 0,
+                        height: isSmall ? "100%" : "100",
                         opacity: isSmall ? 0.9 : 1,
                         clipPath: isSmall
                             ? "polygon(0% 100%, 30% 0%, 100% 0%, 100% 100%)"
@@ -123,47 +125,60 @@ const ArtifactDetail = () => {
                     bgcolor={`${category}.dark`}
                 >
                     <Stack spacing={2}>
-                        <Stack
+                        <Grid
+                            container
                             alignSelf="end"
                             paddingTop={3}
                             direction="row"
-                            spacing={3}
+                            justifyContent="flex-end"
+                            spacing={1}
+                            sx={{ width: isSmall ? "40vw" : "60vw" }}
+                            alignItems="center"
                         >
-                            <Button
-                                variant="contained"
-                                onClick={() => router.back()}
-                                startIcon={<KeyboardReturnIcon />}
-                                sx={{
-                                    borderRadius: "100px",
-                                    fontSize: isSmall ? "12px" : "1.5vw",
-                                    textWrap: "nowrap",
-                                }}
-                                color="secondary"
-                            >
-                                戻る
-                            </Button>
-                            <TweetButton
-                                size="small"
-                                text={`${process.env.NEXT_PUBLIC_FRONT_END_URL}${router.asPath}`}
-                            />
-                            {isSmall && (
+                            <Grid item>
                                 <Button
-                                    onClick={() => setCommentIsOpen(true)}
                                     variant="contained"
-                                    sx={{ borderRadius: "999px" }}
+                                    onClick={() => router.back()}
+                                    startIcon={<KeyboardReturnIcon />}
+                                    sx={{
+                                        borderRadius: "100px",
+                                        fontSize: isSmall ? "12px" : "1.5vw",
+                                        textWrap: "nowrap",
+                                    }}
+                                    color="secondary"
                                 >
-                                    コメントを見る
+                                    戻る
                                 </Button>
+                            </Grid>
+                            <Grid item>
+                                <TweetButton
+                                    size="small"
+                                    text={`${process.env.NEXT_PUBLIC_FRONT_END_URL}${router.asPath}`}
+                                />
+                            </Grid>
+
+                            {isSmall && (
+                                <Grid item>
+                                    <Button
+                                        onClick={() => setCommentIsOpen(true)}
+                                        variant="contained"
+                                        sx={{ borderRadius: "999px" }}
+                                    >
+                                        コメントを見る
+                                    </Button>
+                                </Grid>
                             )}
-                            <Favorite
-                                workId={
-                                    typeof artifactId! == "string"
-                                        ? artifactId ?? ""
-                                        : (artifactId ?? [""])[0]
-                                }
-                                favoriteUsersProps={data?.likes}
-                            />
-                        </Stack>
+                            <Grid item>
+                                <Favorite
+                                    workId={
+                                        typeof artifactId! == "string"
+                                            ? artifactId ?? ""
+                                            : (artifactId ?? [""])[0]
+                                    }
+                                    favoriteUsersProps={data?.likes}
+                                />
+                            </Grid>
+                        </Grid>
                         {!isSmall && (
                             <Box
                                 component="div"

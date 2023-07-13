@@ -8,8 +8,7 @@ import { ModelViewer } from "../ModelViewer/ModelViewer";
 import { Player } from "../Player/Player";
 export const Assets = ({ assets }: Pick<AssetsModalProps, "assets">) => {
     return (
-
-        <List sx={{ overflow: "auto", width: "90%", height: "90vh" }}>
+        <List sx={{ width: "90%" }}>
             {assets?.map((asset: Asset, index: number) => (
                 <ListItem
                     key={index}
@@ -18,7 +17,7 @@ export const Assets = ({ assets }: Pick<AssetsModalProps, "assets">) => {
                     }}
                 >
                     {asset.asset_type == "video" ||
-                        asset.asset_type == "music" ? (
+                    asset.asset_type == "music" ? (
                         <Box component="div">
                             <Player {...asset} />
                         </Box>
@@ -28,7 +27,7 @@ export const Assets = ({ assets }: Pick<AssetsModalProps, "assets">) => {
                             sx={{
                                 width: "100%",
                                 height: "100%",
-                                minHeight: "50vh"
+                                minHeight: "50vh",
                             }}
                         >
                             <Image
@@ -63,7 +62,11 @@ export const Assets = ({ assets }: Pick<AssetsModalProps, "assets">) => {
     );
 };
 
-export const AssetsModal = ({ isOpen, closeModal, assets }: AssetsModalProps) => {
+export const AssetsModal = ({
+    isOpen,
+    closeModal,
+    assets,
+}: AssetsModalProps) => {
     return (
         <Modal
             open={!isOpen}
@@ -74,11 +77,19 @@ export const AssetsModal = ({ isOpen, closeModal, assets }: AssetsModalProps) =>
                 justifyContent: "center",
             }}
         >
-            <Box sx={{ position: "relative", width: "80vw" }} component="div">
+            <Box
+                sx={{
+                    position: "relative",
+                    width: "80vw",
+                    height: "100vh",
+                    overflow: "auto",
+                }}
+                component="div"
+            >
                 <IconButton
                     sx={{
                         position: "absolute",
-                        right: -30,
+                        right: 0,
                         color: "white",
                         ":hover": {
                             backgroundColor: "yellow",
@@ -92,5 +103,6 @@ export const AssetsModal = ({ isOpen, closeModal, assets }: AssetsModalProps) =>
 
                 <Assets assets={assets} />
             </Box>
-        </Modal>)
-}
+        </Modal>
+    );
+};
