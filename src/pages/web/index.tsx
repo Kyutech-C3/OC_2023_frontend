@@ -11,6 +11,7 @@ import { SurveyLink } from "@/components/Web/SurveyLink/SurveyLink";
 import { TopBackground } from "@/components/Web/TopBackground/TopBackground";
 import { TopScroll } from "@/components/Web/TopScroll/TopScroll";
 import { TopTitle } from "@/components/Web/TopTitle/TopTitle";
+import { C3 } from "@/constants/C3";
 import { Box, Divider, Grid, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { Link as Scroll } from "react-scroll";
@@ -18,7 +19,7 @@ import { Link as Scroll } from "react-scroll";
 const Web = () => {
     const isSmall = useMediaQuery("(min-width:900px)");
     const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
+    console.log(C3);
     return (
         <Box
             id="top"
