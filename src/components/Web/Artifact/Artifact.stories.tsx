@@ -12,7 +12,7 @@ export default {
     argTypes: {},
 } as Meta<typeof Artifact>;
 
-const Template: StoryObj<typeof Artifact> = {
+export const Template: StoryObj<typeof Artifact> = {
     args: {
         id: "b949c1c7-9132-4315-8d3e-476e5066c3de",
         title: "日清のやつ",
