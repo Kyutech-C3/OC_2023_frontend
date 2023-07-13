@@ -25,7 +25,7 @@ const CategoryTop = () => {
     }
     const { works, refetch, isLoading, isContinue } = useGetWorks(
         `${process.env.NEXT_PUBLIC_BACKEND_API}/api/v1/works`,
-        "?tag_names=OC2023"
+        { tag_names: "OC2023" }
     );
     useTopLoading({ isLoading, message: "getting" });
     if (isLoading) {
@@ -60,9 +60,10 @@ const CategoryTop = () => {
                 loadMore={() => {
                     if (works.length != 0) {
                         refetch(
-                            `newest_work_id=${
-                                works[works.length - 1].id
-                            }&tag_names=${category}`,
+                            {
+                                tag_names: "OC2023",
+                                newest_work_id: works[works.length - 1].id,
+                            },
                             false
                         );
                     }
