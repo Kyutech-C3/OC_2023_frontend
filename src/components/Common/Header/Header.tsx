@@ -1,11 +1,23 @@
-import { AppBar, Box, Typography } from "@mui/material";
+import { AppBar, Box, Stack, Typography } from "@mui/material";
+import { NavigationBar } from "../NavigationBar/NavigationBar";
 
 export const Header = () => {
     return (
-        <AppBar sx={{ backgroundColor: "#ffffff00", boxShadow: "none" }}>
-            <Box ml={8} component="div">
-                <Typography variant="h3">C3 OpenCampus 2023</Typography>
-            </Box>
+        <AppBar
+            sx={{
+                backgroundColor: "transparent",
+                boxShadow: "none",
+                position: "absolute",
+            }}
+        >
+            <Stack spacing={2} sx={{ pl: 1 }} direction="row">
+                <NavigationBar />
+                <Box component="div">
+                    <Typography sx={{ fontSize: "3vmax", color: "white" }}>
+                        C3 OpenCampus 2023
+                    </Typography>
+                </Box>
+            </Stack>
         </AppBar>
     );
 };

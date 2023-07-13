@@ -7,6 +7,7 @@ export const Player = ({ url }: Asset) => {
             style={{
                 userSelect: "none",
             }}
+            width={"60vw"}
             controls={true}
             url={url}
         />

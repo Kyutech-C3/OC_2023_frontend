@@ -3,7 +3,7 @@ import { useTopLoading } from "@/hooks/common";
 import { useGetWorks } from "@/hooks/web";
 import { castCategoryName } from "@/libs/getCategory";
 import { Work } from "@/types/common";
-import { Box, Grid } from "@mui/material";
+import { Box, Button, ButtonTypeMap, Grid, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import InfiniteScroll from "react-infinite-scroller";
 
@@ -32,7 +32,25 @@ const CategoryTop = () => {
         return <></>;
     }
     return (
-        <Box component="div" sx={{}}>
+        <Box component="div">
+            <Button
+                onClick={() => router.back()}
+                sx={{
+                    position: "absolute",
+                    top: "1%",
+                    left: "5%",
+                    borderRadius: "999px",
+                }}
+                color={
+                    category as Extract<
+                        ButtonTypeMap["props"]["color"],
+                        "hack" | "game" | "cg2d" | "cg3d" | "music" | "primary"
+                    >
+                }
+                variant="contained"
+            >
+                戻る
+            </Button>
             <Box
                 component="div"
                 sx={{
@@ -70,30 +88,49 @@ const CategoryTop = () => {
                 }}
                 hasMore={isContinue}
             >
-                <Grid
-                    container
-                    justifyContent={"center"}
-                    spacing={6}
-                    sx={{ backgroundColor: "#00000066", pt: 5 }}
-                >
-                    {works
-                        .filter((work) =>
-                            work.tags.some(
-                                (tag) =>
-                                    tag.name ===
-                                    castCategoryName(
-                                        typeof category == "string"
-                                            ? category
-                                            : category![0]
-                                    ).toUpperCase()
+                {works.filter((work) =>
+                    work.tags.some(
+                        (tag) =>
+                            tag.name ===
+                            castCategoryName(
+                                typeof category == "string"
+                                    ? category
+                                    : category![0]
+                            ).toUpperCase()
+                    )
+                ).length != 0 ? (
+                    <Grid
+                        container
+                        justifyContent={"center"}
+                        spacing={6}
+                        sx={{ backgroundColor: "#00000066", pt: 5 }}
+                    >
+                        {works
+                            .filter((work) =>
+                                work.tags.some(
+                                    (tag) =>
+                                        tag.name ===
+                                        castCategoryName(
+                                            typeof category == "string"
+                                                ? category
+                                                : category![0]
+                                        ).toUpperCase()
+                                )
                             )
-                        )
-                        .map((artifact: Work, index: number) => (
-                            <Grid item key={index}>
-                                <Artifact {...artifact} />
-                            </Grid>
-                        ))}
-                </Grid>
+                            .map(
+                                (
+                                    artifact: Work & { likes: string[] },
+                                    index: number
+                                ) => (
+                                    <Grid item key={index}>
+                                        <Artifact {...artifact} />
+                                    </Grid>
+                                )
+                            )}
+                    </Grid>
+                ) : (
+                    <Typography p={2}>作品が見つかりませんでした</Typography>
+                )}
             </InfiniteScroll>
         </Box>
     );
