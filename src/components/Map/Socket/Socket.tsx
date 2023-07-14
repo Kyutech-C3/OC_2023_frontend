@@ -4,9 +4,7 @@ export const Socket = () => {
     const [uid, setUid] = React.useState<string>();
     const socketRef = React.useRef<WebSocket>();
 
-    type init = {
-      
-    }
+    type init = {};
 
     React.useEffect(() => {
         const websocket = new WebSocket(
@@ -25,5 +23,6 @@ export const Socket = () => {
         };
     }, []);
 
-    return <div>{uid}</div>;
+    // return <div>{uid}</div>;
+    return <></>;
 };

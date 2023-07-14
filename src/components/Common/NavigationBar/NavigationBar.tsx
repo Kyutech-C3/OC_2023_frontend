@@ -1,6 +1,7 @@
 import { Twitter, Widgets } from "@mui/icons-material";
 import GamepadIcon from "@mui/icons-material/Gamepad";
 import MapIcon from "@mui/icons-material/Map";
+import WebIcon from "@mui/icons-material/Web";
 import MenuIcon from "@mui/icons-material/Menu";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
@@ -13,8 +14,10 @@ import WorkspacesIcon from "@mui/icons-material/Workspaces";
 import YouTube from "@mui/icons-material/YouTube";
 import { Box, Button, Drawer, IconButton, Stack } from "@mui/material";
 import { useState } from "react";
+import { useRouter } from "next/router";
 export const NavigationBar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const router = useRouter();
     return (
         <Box component="div">
             <IconButton onClick={() => setIsOpen(true)} sx={{ py: 2 }}>
@@ -31,18 +34,37 @@ export const NavigationBar = () => {
                         height: "100%",
                     }}
                 >
-                    <Button
-                        href="/map"
-                        sx={{ color: "white" }}
-                        startIcon={
-                            <>
-                                <NavigateBeforeIcon sx={{ rotate: "-45deg" }} />
-                                <MapIcon />
-                            </>
-                        }
-                    >
-                        マップ
-                    </Button>
+                    {router.pathname == "/map" ? (
+                        <Button
+                            href="/web"
+                            sx={{ color: "white" }}
+                            startIcon={
+                                <>
+                                    <NavigateBeforeIcon
+                                        sx={{ rotate: "-45deg" }}
+                                    />
+                                    <WebIcon />
+                                </>
+                            }
+                        >
+                            ウェブ
+                        </Button>
+                    ) : (
+                        <Button
+                            href="/map"
+                            sx={{ color: "white" }}
+                            startIcon={
+                                <>
+                                    <NavigateBeforeIcon
+                                        sx={{ rotate: "-45deg" }}
+                                    />
+                                    <MapIcon />
+                                </>
+                            }
+                        >
+                            マップ
+                        </Button>
+                    )}
                     <Stack>
                         <Button
                             sx={{ color: "white", alignSelf: "start" }}
