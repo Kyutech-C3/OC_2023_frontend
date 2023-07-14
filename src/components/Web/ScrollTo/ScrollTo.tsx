@@ -7,12 +7,13 @@ export type ScrollToProps = {
 
 export const ScrollTo = ({ to }: ScrollToProps) => {
     const isDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
     return (
         <Scroll to={to} smooth={true} duration={800}>
             <Button
                 sx={{
                     position: "absolute",
-                    left: "50%",
+                    left: "44%",
                     bottom: "10vh",
                     color: isDarkMode ? "white" : "black",
                     ":after": {

@@ -1,17 +1,33 @@
+import { useDebounceSearch } from "@/hooks/web";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, Button, Divider, Stack, TextField } from "@mui/material";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { SearchPopover } from "./SearchPopover";
 
 export const SearchBar = () => {
+    const router = useRouter();
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+    const [searchWord, setSearchWord] = useState("");
     const openPopover = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
     const closePopover = () => {
         setAnchorEl(null);
     };
+    const { debouncedKeyword } = useDebounceSearch({
+        keyword: searchWord,
+        timeOutMillSec: 500,
+    });
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setSearchWord(event.target.value);
+    };
+    useEffect(() => {
+        router.replace({
+            query: { ...router.query, searchWord: debouncedKeyword },
+        });
+    }, [debouncedKeyword]);
     return (
         <Stack
             direction="row"
@@ -31,11 +47,13 @@ export const SearchBar = () => {
                 </Box>
                 <Divider orientation="vertical" />
                 <TextField
+                    onChange={handleChange}
                     sx={{
                         flexGrow: 1,
                         caretColor: "#64F161",
                         "& fieldset": { border: "none" },
                     }}
+                    defaultValue={router.query.searchWord ?? ""}
                 />
                 <Divider orientation="vertical" />
             </Stack>

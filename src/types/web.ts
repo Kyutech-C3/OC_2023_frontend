@@ -8,7 +8,7 @@ export type TweetButtonProps = {
 };
 
 export type ScrollButtonProps = {
-    text: string;
+    text: TopBackgroundProps;
     color: ButtonProps["color"];
 };
 
@@ -25,7 +25,7 @@ export type LinkRendererProps = {
     href: string | undefined;
     children: React.ReactNode;
 };
-export type AssetsProps = {
+export type AssetsModalProps = {
     isOpen: boolean;
     closeModal: () => void;
     assets: Asset[];
@@ -60,6 +60,23 @@ export type CategoryOutlineCardProps = {
     caption: string;
     redirectPath: string;
 };
-export type TopBackgroundProps = {
-    hovering: "hack" | "game" | "2dcg" | "3dcg" | "music" | "";
+export type TopBackgroundAtomProps = {
+    hovering: TopBackgroundProps;
+};
+
+export type ImageIconProps = {
+    src: string;
+};
+export type TopBackgroundProps =
+    | "hack"
+    | "game"
+    | "2dcg"
+    | "3dcg"
+    | "music"
+    | "";
+
+export type ModalProps = {
+    isOpen: boolean;
+    closeModal: () => void;
+    handleConfirm: () => void;
 };

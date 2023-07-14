@@ -1,27 +1,22 @@
 export const imagePaths = [
     {
         department: "hack",
-        imagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        imagePath: "image/background/hack.webp",
     },
     {
         department: "game",
-        imagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        imagePath: "image/background/game.webp",
     },
     {
         department: "2dcg",
-        imagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        imagePath: "image/background/2dcg.webp",
     },
     {
         department: "3dcg",
-        imagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        imagePath: "image/background/3dcg.webp",
     },
     {
         department: "music",
-        imagePath:
-            "https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg",
+        imagePath: "image/background/music.webp",
     },
 ];

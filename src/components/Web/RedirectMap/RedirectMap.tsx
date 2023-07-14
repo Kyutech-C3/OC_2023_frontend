@@ -11,10 +11,11 @@ export const RedirectMap = () => {
         <Box
             component="div"
             sx={{
-                position: "absolute",
+                position: "fixed",
                 right: "0",
                 bgcolor: "gray",
                 borderRadius: "20px 0 0 20px",
+                zIndex: 1000,
             }}
             onMouseOver={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
@@ -39,10 +40,11 @@ export const RedirectMap = () => {
                             width: "200px",
                             height: "120px",
                         }}
-                        href="/web"
+                        href="/map"
                     >
+                        {/* TODO:画像の差し替え */}
                         <Image
-                            src="https://img.freepik.com/free-photo/cute-kitten-staring-out-the-window-playful-curiosity-generative-ai_188544-12520.jpg"
+                            src="https://s3.ap-northeast-2.wasabisys.com/toybox/assets/image/87f05c92-06b1-4418-a8a0-1fc8034a090b/origin.png"
                             width={200}
                             height={100}
                             alt="map"
