@@ -101,7 +101,19 @@ const darkModePalette = {
 export const createTheme = (isDarkMode: boolean) => {
     return muiCreateTheme({
         palette: isDarkMode ? darkModePalette : lightModePalette,
+
         components: {
+            MuiCssBaseline: {
+                styleOverrides: `
+                ::-webkit-scrollbar{
+                    width: 15px;
+                },
+                ::-webkit-scrollbar-thumb {
+                    background-color: #276976;
+                    border-radius: 10px;
+                }
+                `,
+            },
             MuiButton: {
                 styleOverrides: {
                     root: {

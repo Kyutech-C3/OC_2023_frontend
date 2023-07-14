@@ -11,6 +11,7 @@ import {
     Typography,
     useMediaQuery,
 } from "@mui/material";
+import { Favorite } from "../Favorite/Favorite";
 import { WorkTags } from "../Tags/WorkTags";
 import { UserCard } from "../User/UserCard";
 export const Artifact = ({
@@ -20,66 +21,75 @@ export const Artifact = ({
     created_at: createdAt,
     tags,
     thumbnail,
-}: Pick<
-    Work,
-    "id" | "title" | "user" | "created_at" | "tags" | "thumbnail"
->) => {
+    likes,
+}: Pick<Work, "id" | "title" | "user" | "created_at" | "tags" | "thumbnail"> & {
+    likes: string[];
+}) => {
     const category = getCategory(tags);
     const isSmall = useMediaQuery("(min-width:600px)");
     return (
-        <Button href={`/web/artifact/${category}/${id}`}>
-            <Card
-                sx={{
-                    display: isSmall ? "flex" : "",
-                    width: isSmall ? "400px" : "300px",
-                    height: isSmall ? "300px" : "400px",
-                    border: "2px solid",
-                    borderColor: `${category}.dark`,
-                }}
+        <Box component="div" sx={{ position: "relative" }}>
+            <Box
+                component="div"
+                sx={{ position: "absolute", right: 12, zIndex: 1000 }}
             >
-                <CardMedia
-                    component="img"
+                <Favorite workId={id} favoriteUsersProps={likes} />
+            </Box>
+
+            <Button href={`/web/artifact/${category}/${id}`}>
+                <Card
                     sx={{
-                        width: isSmall ? "200px" : "300px",
-                        height: isSmall ? "300px" : "200px",
-                    }}
-                    image={thumbnail.url}
-                    alt="Live from space album cover"
-                />
-                <CardContent
-                    sx={{
-                        width: isSmall ? "200px" : "300px",
-                        backgroundColor: `${category}.main`,
+                        display: isSmall ? "flex" : "",
+                        width: isSmall ? "400px" : "300px",
+                        height: isSmall ? "300px" : "400px",
+                        border: "2px solid",
+                        borderColor: `${category}.dark`,
                     }}
                 >
-                    <Stack spacing={2}>
-                        <Typography
-                            sx={{
-                                textOverflow: "ellipsis",
-                                whiteSpace: "nowrap",
-                                overflow: "hidden",
-                            }}
-                        >
-                            {title}
-                        </Typography>
-                        <UserCard
-                            display_name={user.display_name}
-                            avatar_url={user.avatar_url}
-                            size="small"
-                        />
-                        <Stack direction="row">
-                            <Typography>投稿日</Typography>:
-                            <Date dateString={createdAt} size="s" />
+                    <CardMedia
+                        component="img"
+                        sx={{
+                            width: isSmall ? "200px" : "300px",
+                            height: isSmall ? "300px" : "200px",
+                        }}
+                        image={thumbnail.url}
+                    />
+                    <CardContent
+                        sx={{
+                            width: isSmall ? "200px" : "300px",
+                            backgroundColor: `${category}.main`,
+                        }}
+                    >
+                        <Stack spacing={2}>
+                            <Typography
+                                sx={{
+                                    textOverflow: "ellipsis",
+                                    whiteSpace: "nowrap",
+                                    overflow: "hidden",
+                                }}
+                            >
+                                {title}
+                            </Typography>
+
+                            <UserCard
+                                display_name={user.display_name}
+                                avatar_url={user.avatar_url}
+                                size="small"
+                            />
+                            <Stack direction="row">
+                                <Typography>投稿日</Typography>:
+                                <Date dateString={createdAt} size="s" />
+                            </Stack>
+                            <Box
+                                component="div"
+                                sx={{ overflow: "scroll", height: "200px" }}
+                            >
+                                <WorkTags tags={tags} />
+                            </Box>
                         </Stack>
-                        <Box
-                            component="div"
-                            sx={{ overflow: "scroll", height: "200px" }}
-                        >
-                            <WorkTags tags={tags} />
-                        </Box>
-                    </Stack>
-                </CardContent>
-            </Card>
-        </Button>
+                    </CardContent>
+                </Card>
+            </Button>
+        </Box>
     );
 };

@@ -1,6 +1,6 @@
 import Layout from "@/components/Common/others/Layout";
 import { createTheme } from "@/libs/theme";
-import { ThemeProvider, useMediaQuery } from "@mui/material";
+import { CssBaseline, ThemeProvider, useMediaQuery } from "@mui/material";
 import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 import "../styles/globals.css";
@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <RecoilRoot>
             <ThemeProvider theme={theme}>
+                <CssBaseline />
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>

@@ -115,6 +115,9 @@ devDependencies:
   '@storybook/react':
     specifier: ^7.0.22
     version: 7.0.22(react-dom@18.2.0)(react@18.2.0)(typescript@4.7.4)
+  '@types/gtag.js':
+    specifier: ^0.0.12
+    version: 0.0.12
   '@types/react-infinite-scroller':
     specifier: ^1.2.3
     version: 1.2.3
@@ -4129,6 +4132,10 @@ packages:
     resolution: {integrity: sha512-Sig0SNORX9fdW+bQuTEovKj3uHcUL6LQKbCrrqb1X7J6/ReAbhCXRAhc+SMejhLELFj2QcyuxmUooZ4bt5ReSw==}
     dependencies:
       '@types/node': 18.14.2
+    dev: true
+
+  /@types/gtag.js@0.0.12:
+    resolution: {integrity: sha512-YQV9bUsemkzG81Ea295/nF/5GijnD2Af7QhEofh7xu+kvCN6RdodgNwwGWXB5GMI3NoyvQo0odNctoH/qLMIpg==}
     dev: true
 
   /@types/hast@2.3.4:

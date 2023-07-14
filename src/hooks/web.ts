@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const useGetWorks = (url: string, queryParam: object) => {
-    const [works, setWorks] = useState<Work[]>([]);
+    const [works, setWorks] = useState<(Work & { likes: string[] })[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isContinue, setIsContinue] = useState(true);
     const fetchData = async (
