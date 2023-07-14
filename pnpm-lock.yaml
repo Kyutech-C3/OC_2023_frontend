@@ -71,6 +71,9 @@ dependencies:
   react-three-fiber:
     specifier: ^6.0.13
     version: 6.0.13(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+  react-unity-webgl:
+    specifier: ^9.4.2
+    version: 9.4.2(react@18.2.0)
   recoil:
     specifier: ^0.7.7
     version: 0.7.7(react-dom@18.2.0)(react@18.2.0)
@@ -9794,6 +9797,14 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-unity-webgl@9.4.2(react@18.2.0):
+    resolution: {integrity: sha512-wOFPYgyCrEu1mBYCzTtkTLXxluIS5OMO430XW3uZLrPQHooJsqh8kYq6dwNidf8V8TFVhkp365qVmHyEXLmcHQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-use-measure@2.1.1(react-dom@18.2.0)(react@18.2.0):
