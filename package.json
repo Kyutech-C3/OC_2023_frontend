@@ -52,6 +52,7 @@
         "@storybook/blocks": "^7.0.22",
         "@storybook/nextjs": "^7.0.22",
         "@storybook/react": "^7.0.22",
+        "@types/gtag.js": "^0.0.12",
         "@types/react-infinite-scroller": "^1.2.3",
         "@types/react-scroll": "^1.8.7",
         "@types/uuid": "^9.0.2",
