@@ -1,26 +1,22 @@
+"use client";
+
 import React, { useCallback } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { useEffect, useState } from "react";
 import { ReactUnityEventParameter } from "react-unity-webgl/distribution/types/react-unity-event-parameters";
 import { Modal } from "../Modal/Modal";
 
-
 export const UnityData = () => {
-    const {
-        unityProvider,
-        addEventListener,
-        removeEventListener,
-        sendMessage,
-    } = useUnityContext({
-        loaderUrl: "Build/OpenCampus.loader.js",
-        dataUrl: "Build/OpenCampus.data",
-        frameworkUrl: "Build/OpenCampus.framework.js",
-        codeUrl: "Build/OpenCampus.wasm",
-    });
+    const { unityProvider, addEventListener, removeEventListener } =
+        useUnityContext({
+            loaderUrl: "Build/OpenCampus.loader.js",
+            dataUrl: "Build/OpenCampus.data",
+            frameworkUrl: "Build/OpenCampus.framework.js",
+            codeUrl: "Build/OpenCampus.wasm",
+        });
 
     const [isOpenModal, setIsOpenModal] = useState<Boolean>(false);
     const [category, setCategory] = useState<string>("");
-
 
     const handleDataCallBack = useCallback<
         (...parameters: ReactUnityEventParameter[]) => ReactUnityEventParameter
@@ -76,7 +72,6 @@ export const UnityData = () => {
 
     return (
         <div>
-
             {isOpenModal ? <Modal category={category.toUpperCase()} /> : <></>}
 
             <Unity
