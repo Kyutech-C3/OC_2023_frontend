@@ -1,7 +1,9 @@
 import React, { useCallback } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ReactUnityEventParameter } from "react-unity-webgl/distribution/types/react-unity-event-parameters";
+import { Modal } from "../Modal/Modal";
+
 
 export const UnityData = () => {
     const {
@@ -15,6 +17,10 @@ export const UnityData = () => {
         frameworkUrl: "Build/OpenCampus.framework.js",
         codeUrl: "Build/OpenCampus.wasm",
     });
+
+    const [isOpenModal, setIsOpenModal] = useState<Boolean>(false);
+    const [category, setCategory] = useState<string>("");
+
 
     const handleDataCallBack = useCallback<
         (...parameters: ReactUnityEventParameter[]) => ReactUnityEventParameter
@@ -39,6 +45,10 @@ export const UnityData = () => {
     >((...parameters) => {
         const [Genre] = parameters as [string];
         console.log("Open" + Genre);
+
+        setCategory(Genre);
+        setIsOpenModal(true);
+
         return undefined;
     }, []);
     const handleCloseModal = useCallback<
@@ -46,6 +56,10 @@ export const UnityData = () => {
     >((...parameters) => {
         const [Genre] = parameters as [string];
         console.log("close" + Genre);
+
+        setCategory("");
+        setIsOpenModal(false);
+
         return undefined;
     }, []);
 
@@ -62,6 +76,9 @@ export const UnityData = () => {
 
     return (
         <div>
+
+            {isOpenModal ? <Modal category={category.toUpperCase()} /> : <></>}
+
             <Unity
                 unityProvider={unityProvider}
                 style={{

@@ -25,5 +25,8 @@ export const Socket = () => {
         };
     }, []);
 
-    return <div>{uid}</div>;
+
+    // return <div>{uid}</div>;
+    return <></>;
+
 };
