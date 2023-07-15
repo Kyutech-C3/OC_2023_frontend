@@ -4,6 +4,10 @@ import Head from "next/head";
 
 export const CostomHead = () => {
     const router = useRouter();
+    if (typeof window === "undefined") {
+        return <></>;
+    }
+
     const BaseMeta = () => (
         <>
             <title>C3 OpenCampus2023</title>
